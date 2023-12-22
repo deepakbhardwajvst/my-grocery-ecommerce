@@ -1,0 +1,14 @@
+.DropdownSearch {
+  box-shadow: 0 3px 6px rgba(255, 255, 255, 0.426);
+}
+.ds-input,
+.h-location-box {
+  border: 1px solid rgb(0, 194, 194);
+}
+.ds-categories-list::-webkit-scrollbar {
+  width: 7px !important;
+}
+
+.ds-categories-list::-webkit-scrollbar-thumb {
+  background: #ccc !important;
+}

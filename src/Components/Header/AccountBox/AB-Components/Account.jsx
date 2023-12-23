@@ -2,9 +2,9 @@ import React from "react";
 
 const Account = () => {
   return (
-    <div className="flex bg-white">
-      <img src="./images/icon-user.svg" alt="" className="" />
-      <p className=" text-black">Account</p>
+    <div className="accountbox-item ">
+      <img src="./images/icon-user.svg" alt="" className=" accountbox-img" />
+      <p className=" accountbox-text">Account</p>
     </div>
   );
 };

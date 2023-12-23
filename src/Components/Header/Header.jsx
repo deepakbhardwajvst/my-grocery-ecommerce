@@ -53,8 +53,8 @@ const Header = () => {
       </div>
       {/* Header image */}
       {/* Header Search Star Here */}
-      <div className="h-search-box flex items-center justify-between w-2/6 h-10 py-2 px-4 bg-white">
-        <div className="h-category-box relative w-[31%] flex items-center cursor-pointer">
+      <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-2 px-4 bg-white">
+        <div className="h-category-box relative w-[29%] flex items-center cursor-pointer">
           <DropdownSearch
             data={categories}
             frontHeading={"All Categories"}
@@ -72,8 +72,8 @@ const Header = () => {
       </div>
       {/* Header Search  End Here   */}
       {/* Header Location Box */}
-      <div className="w-1/6">
-        <div className="h-location-box h-9 cursor-pointer px-2  rounded-2xl flex justify-center items-center bg-white">
+      <div className="h-location-box px-2 rounded-2xl bg-white flex justify-center items-center w-max cursor-pointer">
+        <div className=" h-9  flex justify-center items-center">
           <DropdownSearch
             data={countries}
             frontHeading={"Location"}
@@ -82,7 +82,7 @@ const Header = () => {
         </div>
       </div>
       {/* Header Location Box */}
-      <div className="h-account-box w-1/4 whitespace-nowrap w">
+      <div className="h-account-box w-[29%] whitespace-nowrap ml-2 ">
         <AccountBox />
       </div>
     </div>

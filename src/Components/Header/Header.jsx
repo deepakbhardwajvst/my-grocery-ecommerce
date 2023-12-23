@@ -25,26 +25,29 @@ const Header = () => {
     "Clothing & beauty",
     "Fresh Seafood",
   ];
-  const [countries, setCountries] = useState([]);
+  const countries = [];
 
   useEffect(() => {
     getCountry("https://countriesnow.space/api/v0.1/countries/");
   }, []);
 
-  const getCountry = (url) => {
-    axios
-      .get(url)
-      .then((res) => {
+  const getCountry = async (url) => {
+    try {
+      await axios.get(url).then((res) => {
         if (res !== null) {
-          const countryNames = res.data.data.map((item) => item.country);
-          setCountries(countryNames);
-        }
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+          //console.log(res.data.data);
+          res.data.data.map((item, index) => {
+            countries.push(item.country);
+            //console.log(item.country)
+          });
 
+          //console.log(res.data.data[0].country)
+        }
+      });
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   return (
     <div className="header flex items-center justify-between my-4 w-full rounded-lg">
       {/* Header image */}

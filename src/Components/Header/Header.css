@@ -15,16 +15,16 @@
   border-top-left-radius: 0px !important;
 }
 .accountbox-item {
-  border: 2px solid rgb(0, 194, 194);
-
+  position: relative;
   display: flex;
-  background-color: white;
-  padding: 0.5rem;
   justify-content: center;
   align-items: flex-end;
-  position: relative;
+  background-color: white;
+  padding: 0.5rem;
   border-radius: 0.5rem;
+  border: 2px solid rgb(0, 194, 194);
   box-shadow: 1px 2px 15px rgba(255, 255, 255, 0.542);
+  cursor: pointer;
 }
 
 .accountbox-img {
@@ -39,8 +39,8 @@
 }
 .accountbox-span {
   position: absolute;
-  top: 0.25rem;
-  left: 1rem;
+  top: 0;
+  left: 1.25rem;
   padding: 1px 0.25rem;
   font-weight: bold;
   background-color: aqua;

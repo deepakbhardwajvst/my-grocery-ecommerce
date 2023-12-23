@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import "./DropdownSearch.css";
+
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import useOutsideClick from "@/CustomHook/useOutsideClick";
 
 const DropdownSearch = (props) => {
   const [dropdown, setDropdown] = useState(false);
@@ -10,8 +12,9 @@ const DropdownSearch = (props) => {
   const [selectedCategoriesName, setSelectedCategoriesName] = useState(
     props.frontHeading
   );
-  const dropdownref = useRef();
-
+  const [dataAndSearchResult, setDataAndSearchResult] = useState(props.data);
+  const dropdownRef = useRef(null);
+  const storingData = props.data;
   const dropdownHandler = () => {
     setDropdown(!dropdown);
   };
@@ -22,28 +25,34 @@ const DropdownSearch = (props) => {
   };
 
   //   <---- for hiding dropdown menu
-  const clickOutSide = (event) => {
-    if (dropdownref.current && !dropdownref.current.contains(event.target)) {
-      setDropdown(false);
-    }
+  const closeDropdown = () => setDropdown(false); // Fix here
+
+  // Useing the custom hook
+  useOutsideClick(dropdownRef, closeDropdown);
+  //    for hiding dropdown menu ---->
+  // For Search Result
+  const filterList = (e) => {
+    const inputResult = e.target.value.toLowerCase();
+    const filterResult = storingData.filter((item) => {
+      return item.toLowerCase().includes(inputResult);
+    });
+    const searchResult = filterResult.filter((item, index) => {
+      return filterResult.indexOf(item) === index;
+    });
+    setDataAndSearchResult(searchResult);
+    console.log(searchResult);
   };
 
-  useEffect(() => {
-    document.addEventListener("click", clickOutSide);
-
-    return () => {
-      document.removeEventListener("click", clickOutSide);
-    };
-  }, []);
-  //    for hiding dropdown menu ---->
   return (
     <div
-      ref={dropdownref}
       className="ds-wrapper pr-1 whitespace-nowrap text-black w-full flex relative"
+      ref={dropdownRef}
     >
       <div className="w-full" onClick={dropdownHandler}>
         {props.icon}
-        {selectedCategoriesName}
+        {selectedCategoriesName.length > 10
+          ? selectedCategoriesName.substr(0, 10) + "..."
+          : selectedCategoriesName}
       </div>
       {dropdown === true && (
         <div className="DropdownSearch absolute w-52 h-auto rounded-xl top-[100%] left-[-10px] bg-white shadow-md py-3 pr-2">
@@ -51,6 +60,7 @@ const DropdownSearch = (props) => {
             <input
               type="search"
               className="ds-input w-full rounded-md ml-1 py-1 px-1.5 outline-none"
+              onChange={filterList}
               placeholder="Search categories"
             />
           </div>
@@ -67,7 +77,7 @@ const DropdownSearch = (props) => {
               >
                 {selectedCategoriesName}
               </li>
-              {props.data.map((categoryname, index) => {
+              {dataAndSearchResult.map((categoryname, index) => {
                 return (
                   <li
                     key={index}

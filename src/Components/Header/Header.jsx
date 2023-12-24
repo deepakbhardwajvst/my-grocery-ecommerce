@@ -49,7 +49,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="header flex items-center justify-between my-4 w-full rounded-lg">
+    <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
       {/* Header image */}
       <div className="h-img-box w-1/6">
         <img src="./images/logo.svg" alt="Logo" className=" object-cover" />

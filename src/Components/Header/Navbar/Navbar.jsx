@@ -1,7 +1,7 @@
 import React from "react";
-import BrowseCategories from "./NavComponent/BrowseCategories";
-import NavigationLinks from "./NavComponent/NavigationLinks";
-import HotlineInfo from "./NavComponent/HotlineInfo";
+import BrowseCategories from "./NavComponent/BrowseCategories/BrowseCategories";
+import NavigationLinks from "./NavComponent/NavigationLinks/NavigationLinks";
+import HotlineInfo from "./NavComponent/HotlineInfo/HotlineInfo";
 
 const Navbar = () => {
   return (

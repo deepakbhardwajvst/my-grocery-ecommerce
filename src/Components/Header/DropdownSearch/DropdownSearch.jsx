@@ -50,8 +50,8 @@ const DropdownSearch = (props) => {
     >
       <div className="w-full" onClick={dropdownHandler}>
         {props.icon}
-        {selectedCategoriesName.length > 10
-          ? selectedCategoriesName.substr(0, 10) + "..."
+        {selectedCategoriesName.length > 14
+          ? selectedCategoriesName.substr(0, 14) + "..."
           : selectedCategoriesName}
       </div>
       {dropdown === true && (

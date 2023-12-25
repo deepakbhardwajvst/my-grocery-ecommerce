@@ -25,7 +25,7 @@ const DropdownSearch = (props) => {
   };
 
   //   <---- for hiding dropdown menu
-  const closeDropdown = () => setDropdown(false); // Fix here
+  const closeDropdown = () => setDropdown(false);
 
   // Useing the custom hook
   useOutsideClick(dropdownRef, closeDropdown);
@@ -45,7 +45,7 @@ const DropdownSearch = (props) => {
 
   return (
     <div
-      className="ds-wrapper pr-1 whitespace-nowrap text-black w-full flex relative"
+      className="ds-wrapper pr-1 whitespace-nowrap text-black w-full flex relative z-10"
       ref={dropdownRef}
     >
       <div className="w-full" onClick={dropdownHandler}>
@@ -68,7 +68,7 @@ const DropdownSearch = (props) => {
             <ul className="ds-categories-list w-full ml-1 py-2.5 px-0 max-h-[300px] overflow-y-scroll overflow-x-hidden">
               {/* category list items */}
               <li
-                className={`ds-categories-list-item hover:bg-[aqua] text-[16px] w-full p-2.5 ${
+                className={`ds-categories-list-item hover:bg-[#3b82f6] text-[16px] w-full p-2.5 ${
                   selectedCategories === 0
                     ? "ds-li-select bg-[#f0f0f0]  font-bold"
                     : ""
@@ -81,7 +81,7 @@ const DropdownSearch = (props) => {
                 return (
                   <li
                     key={index}
-                    className={`ds-categories-list-item hover:bg-[aqua] text-[16px] w-full p-2.5 ${
+                    className={`ds-categories-list-item hover:bg-[#3b82f6] text-[16px] w-full p-2.5 ${
                       selectedCategories === index + 1
                         ? "ds-li-select bg-[#f0f0f0]  font-bold"
                         : ""

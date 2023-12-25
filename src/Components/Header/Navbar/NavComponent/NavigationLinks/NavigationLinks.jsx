@@ -1,7 +1,8 @@
 "use client";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import SubmenuDropdown from "./SubmenuDropdown/SubmenuDropdown";
+import useOutsideClick from "@/CustomHook/useOutsideClick";
 
 const navItems = [
   "Deals",
@@ -34,7 +35,7 @@ const navItems = [
     ],
   },
   {
-    label: "Mega menu",
+    label: "Mega Menu",
     hasSubmenu: true,
     submenuData: [
       { label: "Submenu10" },
@@ -67,6 +68,7 @@ const NavigationLinks = () => {
   const [subDropdowns, setSubDropdowns] = useState(
     Array(navItems.length).fill(false)
   );
+  const dropdownRef = useRef(null);
 
   const subDropdownHandler = (index) => {
     const newSubDropdowns = [...subDropdowns];
@@ -74,8 +76,14 @@ const NavigationLinks = () => {
     setSubDropdowns(newSubDropdowns);
   };
 
+  const closeDropdown = () => {
+    setSubDropdowns(Array(navItems.length).fill(false)); // Set to array of false
+  };
+
+  useOutsideClick(dropdownRef, closeDropdown);
+
   return (
-    <div className="flex justify-center text-gray-700 items-center">
+    <div className="flex justify-center text-gray-700 items-center w-full">
       {navItems.map((item, index) => (
         <div
           key={index}
@@ -86,6 +94,7 @@ const NavigationLinks = () => {
           {typeof item === "object" && item.hasSubmenu ? (
             <div className="">
               <div
+                ref={dropdownRef}
                 className="text-white hover:text-blue-400 whitespace-nowrap relative"
                 onClick={() => subDropdownHandler(index)}
               >

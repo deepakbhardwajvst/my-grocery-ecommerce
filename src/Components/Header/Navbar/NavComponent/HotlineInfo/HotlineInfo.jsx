@@ -3,7 +3,7 @@ import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
 
 const HotlineInfo = () => {
   return (
-    <div className="flex items-center text-gray-700 cursor-pointer">
+    <div className="flex items-center text-gray-700 cursor-pointer w-full justify-end">
       <span className=" text-blue-500">
         <HeadphonesOutlinedIcon className="text-3xl text-white" />
       </span>

@@ -7,6 +7,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import DropdownSearch from "./DropdownSearch/DropdownSearch";
 import axios from "axios";
 import AccountBox from "./AccountBox/AccountBox";
+import Navbar from "./Navbar/Navbar";
 
 const Header = () => {
   const categories = [
@@ -49,45 +50,48 @@ const Header = () => {
     }
   };
   return (
-    <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
-      {/* Header image */}
-      <div className="h-img-box w-1/6">
-        <img src="./images/logo.svg" alt="Logo" className=" object-cover" />
-      </div>
-      {/* Header image */}
-      {/* Header Search Star Here */}
-      <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-2 px-4 bg-white">
-        <div className="h-category-box relative w-[29%] flex items-center cursor-pointer">
-          <DropdownSearch
-            data={categories}
-            frontHeading={"All Categories"}
-            icon={false}
-          />
+    <div className="">
+      <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
+        {/* Header image */}
+        <div className="h-img-box w-1/6">
+          <img src="./images/logo.svg" alt="Logo" className=" object-cover" />
         </div>
-        <input
-          type="search"
-          name=""
-          id=""
-          placeholder="Fortune soyabean oil"
-          className="outline-none placeholder-shown:text-center w-[60%] text-black capitalize"
-        />
-        <SearchIcon className="text-black opacity-50 " />
-      </div>
-      {/* Header Search  End Here   */}
-      {/* Header Location Box */}
-      <div className="h-location-box px-2 rounded-2xl bg-white flex justify-center items-center w-max cursor-pointer">
-        <div className=" h-9  flex justify-center items-center">
-          <DropdownSearch
-            data={countries}
-            frontHeading={"Location"}
-            icon={<LocationOnOutlinedIcon className="text-black  pr-1" />}
+        {/* Header image */}
+        {/* Header Search Star Here */}
+        <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-2 px-4 bg-white">
+          <div className="h-category-box relative w-[29%] flex items-center cursor-pointer">
+            <DropdownSearch
+              data={categories}
+              frontHeading={"All Categories"}
+              icon={false}
+            />
+          </div>
+          <input
+            type="search"
+            name=""
+            id=""
+            placeholder="Fortune soyabean oil"
+            className="outline-none placeholder-shown:text-center w-[60%] text-black capitalize"
           />
+          <SearchIcon className="text-black opacity-50 " />
+        </div>
+        {/* Header Search  End Here   */}
+        {/* Header Location Box */}
+        <div className="h-location-box px-2 rounded-2xl bg-white flex justify-center items-center w-max cursor-pointer">
+          <div className=" h-9  flex justify-center items-center">
+            <DropdownSearch
+              data={countries}
+              frontHeading={"Location"}
+              icon={<LocationOnOutlinedIcon className="text-black  pr-1" />}
+            />
+          </div>
+        </div>
+        {/* Header Location Box */}
+        <div className="h-account-box w-[29%] whitespace-nowrap ml-2 ">
+          <AccountBox />
         </div>
       </div>
-      {/* Header Location Box */}
-      <div className="h-account-box w-[29%] whitespace-nowrap ml-2 ">
-        <AccountBox />
-      </div>
+      <Navbar />
     </div>
   );
 };

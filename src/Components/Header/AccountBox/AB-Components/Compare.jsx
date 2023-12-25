@@ -1,9 +1,10 @@
 import React from "react";
-
+import CompareIcon from "@mui/icons-material/Compare";
 const Compare = () => {
   return (
     <div className="accountbox-item">
-      <img src="./images/icon-compare.svg" alt="" className="accountbox-img" />
+      <CompareIcon className="accountbox-img" />
+
       <span className="accountbox-span">1</span>
       <p className="accountbox-text">Compare</p>
     </div>

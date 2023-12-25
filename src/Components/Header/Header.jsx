@@ -58,7 +58,7 @@ const Header = () => {
         </div>
         {/* Header image */}
         {/* Header Search Star Here */}
-        <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-2 px-4 bg-white">
+        <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-3 px-4 bg1 border1">
           <div className="h-category-box relative w-[29%] flex items-center cursor-pointer">
             <DropdownSearch
               data={categories}
@@ -71,18 +71,18 @@ const Header = () => {
             name=""
             id=""
             placeholder="Fortune soyabean oil"
-            className="outline-none placeholder-shown:text-center w-[60%] text-black capitalize"
+            className="outline-none placeholder-shown:text-center w-[60%] color1 capitalize bg1"
           />
-          <SearchIcon className="text-black opacity-50 " />
+          <SearchIcon className="color1 opacity-50 " />
         </div>
         {/* Header Search  End Here   */}
         {/* Header Location Box */}
-        <div className="h-location-box px-2 rounded-2xl bg-white flex justify-center items-center w-max cursor-pointer">
+        <div className="h-location-box px-2 rounded-2xl bg1 flex justify-center items-center w-max cursor-pointer border1">
           <div className=" h-9  flex justify-center items-center">
             <DropdownSearch
               data={countries}
               frontHeading={"Location"}
-              icon={<LocationOnOutlinedIcon className="text-black  pr-1" />}
+              icon={<LocationOnOutlinedIcon className="color1 pr-1" />}
             />
           </div>
         </div>

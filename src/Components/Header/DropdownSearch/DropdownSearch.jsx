@@ -45,7 +45,7 @@ const DropdownSearch = (props) => {
 
   return (
     <div
-      className="ds-wrapper pr-1 whitespace-nowrap text-black w-full flex relative z-10"
+      className="ds-wrapper pr-1 whitespace-nowrap color1 w-full flex relative z-10"
       ref={dropdownRef}
     >
       <div className="w-full" onClick={dropdownHandler}>
@@ -55,7 +55,7 @@ const DropdownSearch = (props) => {
           : selectedCategoriesName}
       </div>
       {dropdown === true && (
-        <div className="DropdownSearch absolute w-52 h-auto rounded-xl top-[100%] left-[-10px] bg-white shadow-md py-3 pr-2">
+        <div className="DropdownSearch absolute w-52 h-auto rounded-xl top-[100%] left-[-10px] bg1 shadow-md py-3 pr-2">
           <div className="ds-search-box">
             <input
               type="search"
@@ -68,9 +68,9 @@ const DropdownSearch = (props) => {
             <ul className="ds-categories-list w-full ml-1 py-2.5 px-0 max-h-[300px] overflow-y-scroll overflow-x-hidden">
               {/* category list items */}
               <li
-                className={`ds-categories-list-item hover:bg-[#3b82f6] text-[16px] w-full p-2.5 ${
+                className={`ds-categories-list-item bg1 bg1hover text-[16px] w-full p-2.5 ${
                   selectedCategories === 0
-                    ? "ds-li-select bg-[#f0f0f0]  font-bold"
+                    ? "ds-li-select bg-[#3a3a3a] text-gray-700  font-bold"
                     : ""
                 } `}
                 onClick={() => dropdownHandlerClose(selectedCategoriesName, 0)}
@@ -81,9 +81,9 @@ const DropdownSearch = (props) => {
                 return (
                   <li
                     key={index}
-                    className={`ds-categories-list-item hover:bg-[#3b82f6] text-[16px] w-full p-2.5 ${
+                    className={`ds-categories-list-item hover:bg-[#3e4a5d] text-[16px] w-full p-2.5 ${
                       selectedCategories === index + 1
-                        ? "ds-li-select bg-[#f0f0f0]  font-bold"
+                        ? "ds-li-select bg-[#414967]  font-bold"
                         : ""
                     } `}
                     onClick={() =>
@@ -100,9 +100,9 @@ const DropdownSearch = (props) => {
       )}
       <span>
         {dropdown === false ? (
-          <KeyboardArrowDownIcon className="text-black pr-2 " />
+          <KeyboardArrowDownIcon className="color1 pr-2 " />
         ) : (
-          <KeyboardArrowUpIcon className="text-black pr-2 " />
+          <KeyboardArrowUpIcon className="color1 pr-2 " />
         )}
       </span>
     </div>

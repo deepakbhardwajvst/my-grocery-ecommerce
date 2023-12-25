@@ -2,7 +2,7 @@
 import { useState, useRef } from "react";
 import AccountBoxDropdown from "./AccountBoxDropdown/AccountBoxDropdown";
 import useOutsideClick from "@/CustomHook/useOutsideClick";
-
+import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
 const Account = () => {
   const [accountDropdown, setAccountDropdown] = useState(false);
 
@@ -24,7 +24,8 @@ const Account = () => {
       onClick={accountDropdownHandler}
       ref={dropdownRef}
     >
-      <img src="./images/icon-user.svg" alt="" className=" accountbox-img" />
+      <Person2OutlinedIcon className=" accountbox-img" />
+
       <p className=" accountbox-text">Account</p>
       {accountDropdown && <AccountBoxDropdown />}
     </div>

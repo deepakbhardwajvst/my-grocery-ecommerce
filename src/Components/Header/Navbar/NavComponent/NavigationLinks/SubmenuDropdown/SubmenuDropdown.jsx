@@ -1,8 +1,8 @@
 const SubmenuDropdown = ({ submenuData }) => {
   return (
-    <div className="absolute bg-white border rounded-md shadow-md mt-2 w-max">
+    <div className="absolute bg1 border rounded-md shadow-md mt-2 w-max z-10">
       {submenuData.map((item, index) => (
-        <div key={index} className="p-2 text-black hover:bg-gray-200 ">
+        <div key={index} className="p-2 color1 hover:bg-gray-500 ">
           {item.label}
         </div>
       ))}

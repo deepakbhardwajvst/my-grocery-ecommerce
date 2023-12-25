@@ -1,9 +1,9 @@
 import React from "react";
-
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 const Wishlist = () => {
   return (
     <div className="accountbox-item">
-      <img src="./images/icon-heart.svg" alt="" className="accountbox-img" />
+      <FavoriteBorderIcon className="accountbox-img" />
       <span className="accountbox-span">1</span>
       <p className="accountbox-text">Wishlist</p>
     </div>

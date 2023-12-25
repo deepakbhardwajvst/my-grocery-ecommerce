@@ -83,7 +83,7 @@ const NavigationLinks = () => {
   useOutsideClick(dropdownRef, closeDropdown);
 
   return (
-    <div className="flex justify-center text-gray-700 items-center w-full">
+    <div className="flex justify-center color1 items-center w-full pl-5">
       {navItems.map((item, index) => (
         <div
           key={index}
@@ -95,7 +95,7 @@ const NavigationLinks = () => {
             <div className="">
               <div
                 ref={dropdownRef}
-                className="text-white hover:text-blue-400 whitespace-nowrap relative"
+                className="color1 hover:text-gray-300 whitespace-nowrap relative px-2"
                 onClick={() => subDropdownHandler(index)}
               >
                 {item.label}
@@ -106,7 +106,7 @@ const NavigationLinks = () => {
               )}
             </div>
           ) : (
-            <div className="text-white hover:text-blue-400">{item}</div>
+            <div className="color1 hover:text-gray-300">{item}</div>
           )}
         </div>
       ))}

@@ -32,12 +32,12 @@ const data = [
 ];
 const AccountBoxDropdown = () => {
   return (
-    <div className="abd-box w-[200px] h-max bg-white absolute top-[38px] right-0 border-[aqua] py-1 rounded-md">
+    <div className="abd-box w-[200px] h-max bg1 color1 absolute top-[38px] right-0 border-[aqua] py-1 rounded-md z-10">
       <ul className="abd-list flex flex-col h-full">
         {data.map((item, index) => {
           return (
             <li
-              className="abd-item text-black hover:bg-[#3b82f6] hover:text-black border-t-[1px]  border-[#f0f0f0]"
+              className="abd-item color1 hover:bg-[#11171e] hover:text-[#b8bec8] border-t-[1px]  border-[#182029]"
               key={item.id}
             >
               <button className="flex justify-start p-1 w-full h-full py-2">

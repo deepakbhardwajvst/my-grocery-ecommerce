@@ -34,7 +34,7 @@ const Carousel = () => {
 
   return (
     <section className="homeCarousel">
-      <div className="container relative">
+      <div className="relative">
         <Slider {...settings} className="Home-carousel-main">
           {carouselData.map((item, index) => (
             <div key={index} className="carousel-item relative full-overlay">
@@ -51,7 +51,6 @@ const Carousel = () => {
             </div>
           ))}
         </Slider>
-
         <EmailAlert />
       </div>
     </section>

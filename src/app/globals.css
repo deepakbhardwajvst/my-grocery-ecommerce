@@ -29,6 +29,22 @@ body {
 .b1hover:hover {
   background: #131120;
 }
+.cardbg1 {
+  background: #2e3a44cc;
+}
+.buttonbg1 {
+  background: rgb(75, 85, 99);
+}
+.textclr1 {
+  color: rgb(75, 85, 99);
+}
+.transition1 {
+  transition: all 0.3s ease-in-out;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+}
 .container {
   min-width: 1610px;
   margin: 0 auto;

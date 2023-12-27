@@ -1,11 +1,11 @@
 .featured-products-carousel .slick-slide {
-  padding-right: 20px !important;
+  /* padding-right: 10px !important; */
 }
 .featured-products-carousel .slick-list {
   padding-left: 25px !important;
 }
 .featured-products-carousel .slick-arrow {
-  zoom: 80%;
+  zoom: 90%;
 }
 .featured-products-carousel .slick-arrow.slick-next {
   top: -50px !important;
@@ -19,8 +19,7 @@
 }
 .featured-products-carousel
   .featured-products-item:hover
-  .featured-products-box,
-.featured-products-carousel .slick-current .featured-products-box {
+  .featured-products-box {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   transform: scale(1.1);
 }

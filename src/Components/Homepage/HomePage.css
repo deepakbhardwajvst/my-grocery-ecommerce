@@ -1,0 +1,25 @@
+.bs-box:hover img {
+  transform: scale(1.1);
+}
+:hover .imgWrapper .overlay {
+  opacity: 1;
+  transform: scale(1);
+}
+.hpcard-icons {
+  opacity: 0;
+}
+.hpcard-img-box:hover .hpcard-icons {
+  opacity: 1 !important;
+}
+.badge.hot {
+  background: #f74b81 !important;
+}
+.badge.sale {
+  background: #67bcee !important;
+}
+.badge.new {
+  background: #3bb77e !important;
+}
+.badge.best {
+  background: #f59758 !important;
+}

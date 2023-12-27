@@ -50,7 +50,7 @@ const Header = () => {
     }
   };
   return (
-    <div className="">
+    <div className=" fixed z-50 bg1 w-full top-0 left-0">
       <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
         {/* Header image */}
         <div className="h-img-box w-1/6">

@@ -1,10 +1,10 @@
 import Navbar from "./../Components/Header/Navbar/Navbar";
-import HamePage from "./../Components/Homepage/HamePage";
+import HomePage from "./../Components/Homepage/HomePage";
 
 export default function Home() {
   return (
     <div>
-      <HamePage />
+      <HomePage />
     </div>
   );
 }

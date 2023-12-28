@@ -6,111 +6,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import "../../HomePage.css";
-const data = [
-  {
-    id: 1,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4.5,
-    tag: "new",
+import "./Tooltip.css";
 
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-
-  {
-    id: 3,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4.2,
-    tag: "hot",
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 4,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 3.5,
-    tag: "best",
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 5,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4.5,
-    tag: "new",
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 6,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 5,
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 13,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4.2,
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 2,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4,
-    tag: "sale",
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 14,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 3.5,
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 15,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 4.5,
-    tag: "hot",
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-  {
-    id: 16,
-    category: "Snack",
-    productName: "Delicious Snack",
-    rating: 5,
-    company: "Nestle",
-    price: 300,
-    image: "./images/thumbnail-1.jpg",
-  },
-];
-
-const HPCard = () => {
+const HPCard = (props) => {
   return (
     <div className="mx-4 my-8 flex flex-wrap justify-between">
-      {data.map((item) => (
+      {props.data.map((item) => (
         <div key={item.id} className="hpcard w-[300px] my-6 relative">
           {item.tag !== null && item.tag !== undefined && (
             <span

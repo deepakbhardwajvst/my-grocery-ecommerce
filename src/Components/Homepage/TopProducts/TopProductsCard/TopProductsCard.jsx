@@ -1,0 +1,56 @@
+import { Rating } from "@mui/material";
+import React from "react";
+import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+const TopProductsCard = (props) => {
+  return (
+    <div>
+      <div className="top-selling-card my-12 ">
+        <h3 className="ts-box-heading text-3xl    font-semibold pb-5 my-7">
+          {props.data.title}
+        </h3>
+        <div className="flex flex-col">
+          {props.data.carddetail.map((item, index) => {
+            return (
+              <div
+                className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3"
+                key={index}
+              >
+                <div className="ts-img-box   w-[30%]">
+                  <img
+                    src="./images/thumbnail-1.jpg"
+                    className="ts-image h-28 w-full   object-contain"
+                  />
+                </div>
+
+                <div className="ts-info px-3 w-[70%]">
+                  <h4 className="ts-heading font-semibold opacity-80 text-lg">
+                    {item.heading}
+                  </h4>
+
+                  <Rating
+                    name="half-rating-read"
+                    defaultValue={item.rating}
+                    precision={0.5}
+                    readOnly
+                  />
+                  <div className="flex items-center">
+                    <span className="ts-price text-g font-bold text-lg mr-5">
+                      {item.currentPrice}
+                      <CurrencyRupeeIcon className=" text-base " />
+                    </span>{" "}
+                    <span className="ts-normal-price text-lg opacity-60  line-through relative">
+                      {item.normalPrice}
+                      <span className="text-base">₹</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TopProductsCard;

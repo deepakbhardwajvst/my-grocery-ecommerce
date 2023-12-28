@@ -31,6 +31,7 @@ const FeaturedProduct = () => {
     slidesToShow: 9,
     slidesToScroll: 1,
     fade: false,
+    className: "featured-products-carousel",
     arrows: true,
     autoplay: 2000,
     // centerMode: true,
@@ -40,10 +41,10 @@ const FeaturedProduct = () => {
     <>
       <div className="featured-products w-full h-auto py-7">
         <div className="featured-products-section ">
-          <h2 className="featured-products-heading text-3xl mb-4 flex items-center">
+          <h2 className="featured-products-heading text-3xl mb-4 flex items-center font-semibold">
             Featured Categories
           </h2>
-          <Slider {...settings} className="featured-products-carousel " id="">
+          <Slider {...settings} className="featured-products-carousel" id="">
             {itemBg.length !== 0 &&
               itemBg.map((item, index) => {
                 return (

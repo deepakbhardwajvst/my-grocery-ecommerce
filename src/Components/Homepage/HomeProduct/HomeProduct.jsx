@@ -1,5 +1,4 @@
 import React from "react";
-import HPCard from "./HPCard/HPCard";
 const Data = [
   {
     id: 1,
@@ -100,6 +99,8 @@ const Data = [
     image: "./images/thumbnail-1.jpg",
   },
 ];
+import Card from "./Card/Card";
+
 const HomeProduct = () => {
   const categories = [
     "All",
@@ -113,7 +114,9 @@ const HomeProduct = () => {
   return (
     <div className="home-product mt-6">
       <div className="hp-head-box flex justify-between items-center w-full">
-        <h2 className="hp-heading w-[60%] text-3xl">Popular Products</h2>
+        <h2 className="hp-heading w-[60%] text-3xl font-semibold">
+          Popular Products
+        </h2>
         <ul className="hp-head-items flex w-[40%] justify-between">
           {categories.map((category, index) => (
             <li
@@ -125,7 +128,13 @@ const HomeProduct = () => {
           ))}
         </ul>
       </div>
-      <HPCard data={Data} />
+      <div className="mx-4 my-8 flex flex-wrap justify-between">
+        {Data.map((data, index) => (
+          <div key={data.id}>
+            <Card data={data} index={index} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

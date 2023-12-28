@@ -27,6 +27,7 @@ const Carousel = () => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    className: "Home-carousel-main",
     fade: true,
     arrows: true,
     autoplay: true,

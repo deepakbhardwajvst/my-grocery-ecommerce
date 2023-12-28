@@ -5,7 +5,13 @@
   padding-left: 25px !important;
 }
 .featured-products-carousel .slick-arrow {
-  zoom: 90%;
+  zoom: 100%;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #1f2937 !important;
+  z-index: 9 !important;
+  transition: all 0.2s ease-in-out;
 }
 .featured-products-carousel .slick-arrow.slick-next {
   top: -50px !important;

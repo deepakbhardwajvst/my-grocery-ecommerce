@@ -2,17 +2,8 @@
 import React from "react";
 import "./Footer.css";
 
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
-import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
-import TwitterIcon from "@mui/icons-material/Twitter";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
-
-import EmailAlert1 from "../HomeSlider/EmailAlert1";
-
+import MiddleFooter from "./MiddleFooter/MiddleFooter";
+import BottomFooter from "./BottomFooter/BottomFooter";
 const Footer = () => {
   const footerBoxData = [
     {
@@ -44,15 +35,19 @@ const Footer = () => {
 
   const topFooter = () => {
     return (
-      <div className="flex justify-between cardbg1 p-8 rounded-lg">
+      <div className="flex justify-between  p-8 ">
         {footerBoxData.map((box, index) => (
           <div
             key={index}
-            className="transition1 flex items-center buttonbg1 p-4 rounded-lg"
+            className="transition1 flex items-center buttonbg1 justify-center p-4 rounded-lg"
           >
-            <span>
-              <img src={box.imgSrc} alt={`Icon ${index + 1}`} />
-            </span>
+            <div className="">
+              <img
+                src={box.imgSrc}
+                alt={`Icon ${index + 1}`}
+                className=" object-contain"
+              />
+            </div>
             <div className="info ml-3">
               <h4>{box.title}</h4>
               <p>{box.description}</p>
@@ -63,7 +58,19 @@ const Footer = () => {
     );
   };
 
-  return <footer className="footer w-full">{topFooter()}</footer>;
+  return (
+    <footer className="footer w-full cardbg1 rounded-lg">
+      <div className="borderb1">
+        <div className="container ">
+          {topFooter()}
+          <MiddleFooter />
+        </div>
+      </div>
+      <div className="container">
+        <BottomFooter />
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;

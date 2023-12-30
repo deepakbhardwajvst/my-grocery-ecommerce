@@ -10,17 +10,19 @@ import Footer from "./Footer/Footer";
 
 const HomePage = () => {
   return (
-    <div className="container">
-      <div className="mt-48">
-        <Carousel />
-        <FeaturedProduct />
-        <Banners />
-        <HomeProduct />
-        <DailyDeals />
-        <TopProducts />
-        <DealsAlert />
-        <Footer />
+    <div className="">
+      <div className="container">
+        <div className="mt-48">
+          <Carousel />
+          <FeaturedProduct />
+          <Banners />
+          <HomeProduct />
+          <DailyDeals />
+          <TopProducts />
+          <DealsAlert />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -4,7 +4,7 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 const TopProductsCard = (props) => {
   return (
     <div>
-      <div className="top-selling-card my-12 cardbg1 px-3 pb-3 pt-1">
+      <div className="top-selling-card my-12 cardbg1 px-3 pb-3 pt-1 rounded-xl">
         <h3 className="ts-box-heading text-3xl    font-semibold pb-5 my-7 borderb1">
           {props.data.title}
         </h3>

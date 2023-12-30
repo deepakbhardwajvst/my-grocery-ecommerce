@@ -110,7 +110,7 @@ const TopProducts = () => {
   ];
   return (
     <section className="top-products-section ">
-      <div className="top-product-container flex">
+      <div className="top-product-container flex gap-2">
         {data.map((section, index) => (
           <div key={index} className="flex mt-5 ">
             <TopProductsCard data={section} />

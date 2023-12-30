@@ -59,3 +59,6 @@
 .Home-carousel-main .slick-active button::before {
   color: #202523 !important;
 }
+.hcbox .ea {
+  position: absolute;
+}

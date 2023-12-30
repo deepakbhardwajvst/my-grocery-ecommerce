@@ -4,21 +4,21 @@ import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
 const TopProductsCard = (props) => {
   return (
     <div>
-      <div className="top-selling-card my-12 ">
-        <h3 className="ts-box-heading text-3xl    font-semibold pb-5 my-7">
+      <div className="top-selling-card my-12 cardbg1 px-3 pb-3 pt-1">
+        <h3 className="ts-box-heading text-3xl    font-semibold pb-5 my-7 borderb1">
           {props.data.title}
         </h3>
         <div className="flex flex-col">
           {props.data.carddetail.map((item, index) => {
             return (
               <div
-                className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3"
+                className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3 mr-3 cursor-pointer buttonbg1 rounded-lg"
                 key={index}
               >
-                <div className="ts-img-box   w-[30%]">
+                <div className="ts-img-box   w-[30%]  rounded-lg">
                   <img
                     src="./images/thumbnail-1.jpg"
-                    className="ts-image h-28 w-full   object-contain"
+                    className="ts-image h-28 w-full   object-contain  rounded-lg "
                   />
                 </div>
 

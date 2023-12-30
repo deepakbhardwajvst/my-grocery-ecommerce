@@ -109,10 +109,10 @@ const TopProducts = () => {
     },
   ];
   return (
-    <section className="top-products-section">
+    <section className="top-products-section ">
       <div className="top-product-container flex">
         {data.map((section, index) => (
-          <div key={index} className="flex">
+          <div key={index} className="flex mt-5 ">
             <TopProductsCard data={section} />
           </div>
         ))}

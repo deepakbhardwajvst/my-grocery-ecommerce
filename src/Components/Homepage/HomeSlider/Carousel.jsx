@@ -2,7 +2,7 @@
 
 import Slider from "react-slick";
 import "./Carousel.css";
-import EmailAlert from "./EmailAlert";
+import EmailAlert1 from "./EmailAlert1";
 
 const Carousel = () => {
   const carouselData = [
@@ -35,7 +35,7 @@ const Carousel = () => {
 
   return (
     <section className="homeCarousel">
-      <div className="relative">
+      <div className="hcbox relative">
         <Slider {...settings} className="Home-carousel-main">
           {carouselData.map((item, index) => (
             <div key={index} className="carousel-item relative full-overlay">
@@ -45,14 +45,14 @@ const Carousel = () => {
                   {item.title} <br />
                   {item.afterBr}
                 </h2>
-                <p className="text-[30px] font-medium text-[#b5b4b4]">
+                <p className="text-[30px] font-medium text-[#797878]">
                   {item.description}
                 </p>
               </div>
             </div>
           ))}
         </Slider>
-        <EmailAlert />
+        <EmailAlert1 className="hcbox-ea" />
       </div>
     </section>
   );

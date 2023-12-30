@@ -105,7 +105,7 @@ const DailyDeals = () => {
     },
   ];
   var settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     className: "DD-slider",

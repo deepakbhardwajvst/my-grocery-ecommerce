@@ -1,19 +1,20 @@
 "use client";
 
-import Slider from "react-slick";
 import "./Carousel.css";
+import Slider from "react-slick";
 import EmailAlert1 from "./EmailAlert1";
+import Image from "next/image";
 
 const Carousel = () => {
   const carouselData = [
     {
-      imgSrc: "./images/slider-1.png",
+      imgSrc: "/images/slider-1.png",
       title: "Dont miss amazing ",
       afterBr: "grocery deals",
       description: "Sign up for the daily newsletter",
     },
     {
-      imgSrc: "./images/slider-2.png",
+      imgSrc: "/images/slider-2.png",
       title: "Fresh Vegetables",
       afterBr: " Big discount",
       description: "Sign up for the daily newsletter",
@@ -34,12 +35,19 @@ const Carousel = () => {
   };
 
   return (
-    <section className="homeCarousel">
+    <section className="homeCarousel ">
       <div className="hcbox relative">
         <Slider {...settings} className="Home-carousel-main">
           {carouselData.map((item, index) => (
             <div key={index} className="carousel-item relative full-overlay">
-              <img src={item.imgSrc} className="carousel-img w-100" />
+              <Image
+                src={item.imgSrc}
+                className="carousel-img w-100"
+                alt="carousel image"
+                height={480}
+                width={480}
+                priority={true}
+              />
               <div className="img-info absolute top-[15%] left-[7%] z-10 ">
                 <h2 className="mb-4 text-[60px] font-bold text-[#000000b3] ">
                   {item.title} <br />
@@ -52,7 +60,11 @@ const Carousel = () => {
             </div>
           ))}
         </Slider>
-        <EmailAlert1 className="hcbox-ea" />
+        <EmailAlert1
+          className="hcbox-ea"
+          id={"EmailAlert"}
+          name={"EmailAlert"}
+        />
       </div>
     </section>
   );

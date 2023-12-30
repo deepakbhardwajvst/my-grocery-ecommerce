@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { lazy, Suspense } from "react";
 
 const EmailAlert1 = lazy(() => import("../HomeSlider/EmailAlert1"));
@@ -17,11 +18,16 @@ const DealsAlert = () => {
               <p className="text-[25px] font-medium text-[#545454] mb-4">
                 Start You'r Daily Shopping with name
               </p>
-              <EmailAlert1 />
+              <EmailAlert1 id={"Deals alert"} name={"Deals alert"} />
             </div>
           </div>
-          <img
-            src="./images/newsletter.png"
+          <Image
+            height={360}
+            width={360}
+            loading="lazy"
+            src="https://wp.alithemes.com/html/nest/demo/assets/imgs/banner/banner-9.png"
+            alt="banner"
+            priority={false}
             className="carousel-img w-[50%] mt-9"
           />
         </div>

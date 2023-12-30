@@ -9,7 +9,7 @@ const Data = [
 
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
 
   {
@@ -20,7 +20,7 @@ const Data = [
     tag: "hot",
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 4,
@@ -30,7 +30,7 @@ const Data = [
     tag: "best",
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 5,
@@ -40,7 +40,7 @@ const Data = [
     tag: "new",
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 6,
@@ -49,7 +49,7 @@ const Data = [
     rating: 5,
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 13,
@@ -58,7 +58,7 @@ const Data = [
     rating: 4.2,
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 2,
@@ -68,7 +68,7 @@ const Data = [
     tag: "sale",
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 14,
@@ -77,7 +77,7 @@ const Data = [
     rating: 3.5,
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 15,
@@ -87,7 +87,7 @@ const Data = [
     tag: "hot",
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
   {
     id: 16,
@@ -96,7 +96,7 @@ const Data = [
     rating: 5,
     company: "Nestle",
     price: 300,
-    image: "./images/thumbnail-1.jpg",
+    image: "/images/thumbnail-1.jpg",
   },
 ];
 import Card from "./Card/Card";

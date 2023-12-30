@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {};
 
-module.exports = nextConfig
+module.exports = {
+  images: {
+    domains: [
+      "rukminim2.flixcart.com",
+      "rukminim1.flixcart.com",
+      "wp.alithemes.com",
+    ],
+  },
+};

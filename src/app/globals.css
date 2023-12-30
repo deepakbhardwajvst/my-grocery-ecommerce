@@ -11,6 +11,15 @@ body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+li,
+Link {
+  list-style: none;
+  text-decoration: none;
+}
+img {
+  object-fit: cover;
+  width: 100%;
+}
 .b {
   background: #131a24;
   color: #b5b4b4;
@@ -47,10 +56,7 @@ body {
 .transition1 {
   transition: all 0.3s ease-in-out;
 }
-img {
-  object-fit: cover;
-  width: 100%;
-}
+
 .container {
   min-width: 1610px;
   margin: 0 auto;
@@ -79,10 +85,4 @@ img {
   .container {
     min-width: 540px;
   }
-}
-
-li,
-Link {
-  list-style: none;
-  text-decoration: none;
 }

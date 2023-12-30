@@ -6,6 +6,7 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
+import Image from "next/image";
 
 const DDCard = () => {
   const id = 1;
@@ -29,9 +30,13 @@ const DDCard = () => {
       <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md ">
         <div className="hpcard-img-box relative">
           <div className=" full-overlay ">
-            <img
+            <Image
+              height={260}
+              width={260}
               src={image}
-              alt=""
+              alt="hi"
+              loading="lazy"
+              priority={false}
               className="hpcard-img w-full object-cover"
             />
           </div>

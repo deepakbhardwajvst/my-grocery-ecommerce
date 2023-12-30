@@ -1,6 +1,6 @@
 "use client";
-import { useEffect, useState } from "react";
 import "./Header.css";
+import { useEffect, useState } from "react";
 
 import SearchIcon from "@mui/icons-material/Search";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -8,6 +8,7 @@ import DropdownSearch from "./DropdownSearch/DropdownSearch";
 import axios from "axios";
 import AccountBox from "./AccountBox/AccountBox";
 import Navbar from "./Navbar/Navbar";
+import Image from "next/image";
 
 const Header = () => {
   const categories = [
@@ -54,8 +55,16 @@ const Header = () => {
       <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
         {/* Header image */}
         <div className="h-img-box w-1/6">
-          <img src="./images/logo.svg" alt="Logo" className=" object-cover" />
+          <Image
+            src="./images/logo.svg"
+            alt="Logo"
+            className="object-contain h-14"
+            height={144}
+            width={144}
+            priority={true}
+          />
         </div>
+
         {/* Header image */}
         {/* Header Search Star Here */}
         <div className="h-search-box flex items-center justify-between w-[37%] h-10 py-3 px-4 bg1 border1">
@@ -68,8 +77,8 @@ const Header = () => {
           </div>
           <input
             type="search"
-            name=""
-            id=""
+            name="search"
+            id="search"
             placeholder="Fortune soyabean oil"
             className="outline-none placeholder-shown:text-center w-[60%] color1 capitalize bg1"
           />

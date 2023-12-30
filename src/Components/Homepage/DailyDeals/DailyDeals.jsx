@@ -2,6 +2,7 @@
 import "./DailyDeals.css";
 import Slider from "react-slick";
 import Card from "../HomeProduct/Card/Card";
+import Image from "next/image";
 
 const DailyDeals = () => {
   const bestSelling = [
@@ -14,7 +15,7 @@ const DailyDeals = () => {
 
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
 
     {
@@ -25,7 +26,7 @@ const DailyDeals = () => {
       tag: "hot",
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 4,
@@ -35,7 +36,7 @@ const DailyDeals = () => {
       tag: "best",
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 5,
@@ -45,7 +46,7 @@ const DailyDeals = () => {
       tag: "new",
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 6,
@@ -54,7 +55,7 @@ const DailyDeals = () => {
       rating: 5,
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 13,
@@ -63,7 +64,7 @@ const DailyDeals = () => {
       rating: 4.2,
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 2,
@@ -73,7 +74,7 @@ const DailyDeals = () => {
       tag: "sale",
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 14,
@@ -82,7 +83,7 @@ const DailyDeals = () => {
       rating: 3.5,
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 15,
@@ -92,7 +93,7 @@ const DailyDeals = () => {
       tag: "hot",
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
     {
       id: 16,
@@ -101,7 +102,7 @@ const DailyDeals = () => {
       rating: 5,
       company: "Nestle",
       price: 300,
-      image: "./images/thumbnail-1.jpg",
+      image: "/images/thumbnail-1.jpg",
     },
   ];
   var settings = {
@@ -123,10 +124,13 @@ const DailyDeals = () => {
         <br />
         <div className="flex  justify-between">
           <div className="w-[20%]">
-            <img
-              src="./images/banner4.jpg"
+            <Image
+              src="/images/banner4.jpg"
               className="w-[300px] h-[495px] rounded-3xl"
               alt="Banner"
+              height={144}
+              width={144}
+              priority={false}
             />
           </div>
           <div className="ml-4 flex   w-[80%]">

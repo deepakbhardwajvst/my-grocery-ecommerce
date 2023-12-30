@@ -2,6 +2,8 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import HeadphonesOutlinedIcon from "@mui/icons-material/HeadphonesOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
+import Image from "next/image";
+
 const MiddleFooter = () => {
   const footerData = [
     {
@@ -59,8 +61,13 @@ const MiddleFooter = () => {
         {" "}
         <div className="flex flex-col w-[90%]">
           <div className="f-img-box">
-            <img
-              src="./images/logo.svg"
+            <Image
+              height={144}
+              width={144}
+              priority={false}
+              loading="lazy"
+              alt="footer img"
+              src="/images/logo.svg"
               className="  object-contain h-16 w-[70%]"
             />
           </div>
@@ -109,19 +116,34 @@ const MiddleFooter = () => {
           <p>From App Store or Google Play</p>
 
           <div className="flex my-3 w-[80%]">
-            <img
-              src="./images/app-store.jpg"
+            <Image
+              height={144}
+              width={144}
+              priority={false}
+              loading="lazy"
+              alt="footer img"
+              src="/images/app-store.jpg"
               className="h-10 object-cover cursor-pointer  hover:scale-105"
             />
-            <img
-              src="./images/google-play.jpg"
+            <Image
+              height={144}
+              width={144}
+              priority={false}
+              loading="lazy"
+              alt="footer img"
+              src="/images/google-play.jpg"
               className="h-10 mx-2 object-cover cursor-pointer  hover:scale-105"
             />
           </div>
           <div className=" w-[80%]">
             <p className="my-3">Secured Payment Gateways</p>
-            <img
-              src="./images/payment-method.png"
+            <Image
+              height={144}
+              width={144}
+              alt="footer img"
+              priority={false}
+              loading="lazy"
+              src="/images/payment-method.png"
               className="h-10  object-contain "
             />
           </div>

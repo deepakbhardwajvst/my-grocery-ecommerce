@@ -1,9 +1,9 @@
 "use client";
-import React from "react";
 import "./Footer.css";
 
 import MiddleFooter from "./MiddleFooter/MiddleFooter";
 import BottomFooter from "./BottomFooter/BottomFooter";
+import Image from "next/image";
 const Footer = () => {
   const footerBoxData = [
     {
@@ -42,7 +42,11 @@ const Footer = () => {
             className="transition1 flex items-center buttonbg1 justify-center p-4 rounded-lg"
           >
             <div className="">
-              <img
+              <Image
+                height={144}
+                width={144}
+                priority={false}
+                loading="lazy"
                 src={box.imgSrc}
                 alt={`Icon ${index + 1}`}
                 className=" object-contain"

@@ -61,6 +61,8 @@ const DropdownSearch = (props) => {
               type="search"
               className="ds-input w-full rounded-md ml-1 py-1 px-1.5 outline-none"
               onChange={filterList}
+              name="cate-search"
+              id="cate-search"
               placeholder="Search categories"
             />
           </div>

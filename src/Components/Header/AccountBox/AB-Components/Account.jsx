@@ -3,6 +3,7 @@ import { useState, useRef } from "react";
 import AccountBoxDropdown from "./AccountBoxDropdown/AccountBoxDropdown";
 import useOutsideClick from "@/CustomHook/useOutsideClick";
 import Person2OutlinedIcon from "@mui/icons-material/Person2Outlined";
+
 const Account = () => {
   const [accountDropdown, setAccountDropdown] = useState(false);
 

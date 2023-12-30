@@ -1,4 +1,5 @@
-import React from "react";
+import "../../HomePage.css";
+import "./Tooltip.css";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
@@ -6,12 +7,12 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 
 import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined";
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
-import "../../HomePage.css";
-import "./Tooltip.css";
+
+import Image from "next/image";
 
 const Card = (props) => {
   return (
-    <div className="hpcard w-[300px] mb-4 relative">
+    <div className="hpcard w-[300px] mb-4 relative ">
       {props.data.tag !== null && props.data.tag !== undefined && (
         <span
           className={`badge absolute top-0 left-0 text-gray-600  z-10 inline-block px-[25px] py-[10px] capitalize  rounded-br-[100px] rounded-tl-[50px] ${props.data.tag}`}
@@ -19,13 +20,17 @@ const Card = (props) => {
           {props.data.tag}
         </span>
       )}
-      <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md ">
+      <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[495px] flex flex-col justify-between">
         <div className="hpcard-img-box relative">
-          <div className=" full-overlay ">
-            <img
-              src={props.data.image}
-              alt=""
-              className="hpcard-img w-full object-cover"
+          <div className="full-overlay ">
+            <Image
+              height={144}
+              width={144}
+              loading="lazy"
+              priority={false}
+              src="https://rukminim2.flixcart.com/image/612/612/kj8wccw0/vegetable/q/w/t/1-carrot-red-un-branded-no-whole-original-imafyv2n34udxasa.jpeg?q=70"
+              alt="Product Image"
+              className="hpcard-img w-full h-72"
             />
           </div>
           <div className="hpcard-icons transition absolute top-0 left-0 w-full h-full p-7 flex items-center justify-center  scale-75 z-20">

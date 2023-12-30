@@ -1,6 +1,7 @@
 import { Rating } from "@mui/material";
 import React from "react";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
+import Image from "next/image";
 const TopProductsCard = (props) => {
   return (
     <div>
@@ -16,9 +17,14 @@ const TopProductsCard = (props) => {
                 key={index}
               >
                 <div className="ts-img-box   w-[30%]  rounded-lg">
-                  <img
-                    src="./images/thumbnail-1.jpg"
-                    className="ts-image h-28 w-full   object-contain  rounded-lg "
+                  <Image
+                    height={144}
+                    width={144}
+                    alt="Top Products"
+                    priority={false}
+                    loading="lazy"
+                    src="https://rukminim2.flixcart.com/image/612/612/kj8wccw0/vegetable/q/w/t/1-carrot-red-un-branded-no-whole-original-imafyv2n34udxasa.jpeg?q=70"
+                    className="ts-image h-[114px] w-full   object-cover  rounded-lg "
                   />
                 </div>
 

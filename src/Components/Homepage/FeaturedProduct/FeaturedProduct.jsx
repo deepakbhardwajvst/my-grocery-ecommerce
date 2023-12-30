@@ -1,7 +1,8 @@
 "use client";
+import "./FeaturedProducts.css";
 import { useState } from "react";
 import Slider from "react-slick";
-import "./FeaturedProducts.css";
+import Image from "next/image";
 const FeaturedProduct = () => {
   const [itemBg, setItemBg] = useState([
     "#fffceb",
@@ -56,10 +57,14 @@ const FeaturedProduct = () => {
                       className="featured-products-box m-auto flex items-center justify-center  flex-col p-4 relative rounded-md"
                       style={{ background: item }}
                     >
-                      <img
-                        src="./images/thumbnail-1.jpg"
-                        width="80"
-                        className="featured-product-img"
+                      <Image
+                        height={144}
+                        width={144}
+                        loading="lazy"
+                        priority={false}
+                        alt="Featured products image"
+                        src="https://rukminim2.flixcart.com/image/612/612/kj8wccw0/vegetable/q/w/t/1-carrot-red-un-branded-no-whole-original-imafyv2n34udxasa.jpeg?q=70"
+                        className="featured-product-img w-auto"
                       />
                       <h5 className="featured-products-name text-gray-800  capitalize mt-3">
                         vagetable

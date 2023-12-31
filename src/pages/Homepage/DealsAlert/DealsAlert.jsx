@@ -7,7 +7,7 @@ const DealsAlert = () => {
   return (
     <section className="homeCarousel ">
       <div className=" bg-sky-300 rounded-3xl">
-        <div className="carousel-item  full-overlay flex justify-center items-center ">
+        <div className="carousel-item full-overlay flex justify-center items-center ">
           <div className="img-info flex flex-col items-center justify-start z-10 w-[50%]">
             <div className="">
               <h2 className="mb-4 text-[40px] font-bold text-[#000000b3] ">

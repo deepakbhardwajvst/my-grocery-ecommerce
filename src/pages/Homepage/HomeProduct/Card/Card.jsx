@@ -15,14 +15,14 @@ const Card = (props) => {
     <div className="hpcard w-[300px] mb-4 relative ">
       {props.data.tag !== null && props.data.tag !== undefined && (
         <span
-          className={`badge absolute top-0 left-0 text-gray-600  z-10 inline-block px-[25px] py-[10px] capitalize  rounded-br-[100px] rounded-tl-[50px] ${props.data.tag}`}
+          className={`badge absolute top-0 left-0 text-gray-600 z-10 inline-block px-[25px] py-[10px] capitalize rounded-br-[100px] rounded-tl-[50px] ${props.data.tag}`}
         >
           {props.data.tag}
         </span>
       )}
       <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[495px] flex flex-col justify-between">
         <div className="hpcard-img-box relative">
-          <div className="full-overlay ">
+          <div className="full-overlay">
             <Image
               height={144}
               width={144}
@@ -33,11 +33,11 @@ const Card = (props) => {
               className="hpcard-img w-full h-72"
             />
           </div>
-          <div className="hpcard-icons transition absolute top-0 left-0 w-full h-full p-7 flex items-center justify-center  scale-75 z-20">
-            <ul className=" flex cardbg1 rounded-xl h-auto justify-center  items-center">
+          <div className="hpcard-icons transition absolute top-0 left-0 w-full h-full p-7 flex items-center justify-center scale-75 z-20">
+            <ul className=" flex cardbg1 rounded-xl h-auto justify-center items-center">
               <li className="h-category-box flex items-center justify-center">
                 <a className=" cursor-pointer p-3 " tooltip="Add to Wishlist">
-                  <FavoriteBorderOutlinedIcon className="text-gray-300  m-1 " />
+                  <FavoriteBorderOutlinedIcon className="text-gray-300 m-1 " />
                 </a>
               </li>
               <li className="h-category-box flex items-center justify-center">

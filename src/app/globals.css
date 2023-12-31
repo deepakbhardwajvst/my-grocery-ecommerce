@@ -11,6 +11,9 @@ body {
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
 }
+input {
+  text-transform: capitalize;
+}
 li,
 Link {
   list-style: none;
@@ -21,34 +24,38 @@ img {
   width: 100%;
 }
 .b {
-  background: #131a24;
-  color: #b5b4b4;
+  background: #0b2447;
+  color: #a5d7e8;
 }
 
 .w {
   background: rgb(31, 41, 55);
-  color: #b5b4b4;
+  color: #a5d7e8;
 }
 .border1 {
-  border: 1px solid #5f5f5f;
+  border: 1px solid #339bbe;
 }
 .borderb1 {
-  border-bottom: 2px solid #5f5f5f;
+  border-bottom: 2px solid #339bbe;
 }
+
 .color1 {
-  color: #b5b4b4;
+  color: #a5d7e8;
 }
 .bg1 {
-  background: #131a24;
+  background: #0b2447;
 }
 .b1hover:hover {
   background: #131120;
 }
 .cardbg1 {
-  background: #2e3a44cc;
+  background: #19376d;
 }
 .buttonbg1 {
-  background: rgb(60, 69, 80);
+  background: #576cbc;
+}
+.buttonbg2 {
+  background: #274988;
 }
 .textclr1 {
   color: rgb(75, 85, 99);
@@ -60,6 +67,20 @@ img {
 .container {
   min-width: 1610px;
   margin: 0 auto;
+}
+.full-overlay {
+  position: relative;
+}
+
+.full-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.251), rgba(0, 0, 0, 0.342));
+  z-index: 1; /* Adjust the z-index to control the stacking order */
 }
 @media (max-width: 1400px) {
   .container {

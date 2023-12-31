@@ -13,7 +13,7 @@ const TopProductsCard = (props) => {
           {props.data.carddetail.map((item, index) => {
             return (
               <div
-                className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3 mr-3 cursor-pointer buttonbg1 rounded-lg"
+                className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3 mr-3 cursor-pointer buttonbg2 rounded-lg"
                 key={index}
               >
                 <div className="ts-img-box   w-[30%]  rounded-lg">

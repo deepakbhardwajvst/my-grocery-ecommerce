@@ -17,7 +17,7 @@
   width: 40px !important;
   height: 40px !important;
   border-radius: 50% !important;
-  background: #1f2937 !important;
+  background: #19376d !important;
   z-index: 9 !important;
   transition: all 0.2s ease-in-out;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23); */
@@ -30,20 +30,6 @@
 }
 .carousel-img {
   filter: brightness(1);
-}
-.full-overlay {
-  position: relative;
-}
-
-.full-overlay::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: linear-gradient(rgba(0, 0, 0, 0.148), rgba(0, 0, 0, 0.2));
-  z-index: 1; /* Adjust the z-index to control the stacking order */
 }
 
 .Home-carousel-main .slick-dots {

@@ -122,7 +122,7 @@ const DailyDeals = () => {
 
         <br />
         <br />
-        <div className="flex  justify-between">
+        <div className="flex justify-between">
           <div className="w-[20%]">
             <Image
               src="/images/banner4.jpg"
@@ -133,7 +133,7 @@ const DailyDeals = () => {
               priority={false}
             />
           </div>
-          <div className="ml-4 flex   w-[80%]">
+          <div className="ml-4 flex  w-[80%]">
             <Slider {...settings} className="DD-slider flex w-[100%]">
               {bestSelling.map((item, index) => {
                 return <Card data={item} key={index} />;

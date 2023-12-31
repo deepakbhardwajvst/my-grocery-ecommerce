@@ -57,7 +57,7 @@ const MiddleFooter = () => {
   ];
   return (
     <div className="flex w-full">
-      <div className=" w-[24%] p-4">
+      <div className="w-[24%] p-4">
         {" "}
         <div className="flex flex-col w-[90%]">
           <div className="f-img-box">
@@ -68,7 +68,7 @@ const MiddleFooter = () => {
               loading="lazy"
               alt="footer img"
               src="/images/logo.svg"
-              className="  object-contain h-16 w-[70%]"
+              className=" object-contain h-16 w-[70%]"
             />
           </div>
 
@@ -101,7 +101,7 @@ const MiddleFooter = () => {
               {category.items.map((item, itemIndex) => (
                 <li
                   key={itemIndex}
-                  className="mb-3  hover:underline cursor-pointer transition1 hover:scale-110"
+                  className="mb-3 hover:underline cursor-pointer transition1 hover:scale-110"
                 >
                   {item}
                 </li>
@@ -123,7 +123,7 @@ const MiddleFooter = () => {
               loading="lazy"
               alt="footer img"
               src="/images/app-store.jpg"
-              className="h-10 object-cover cursor-pointer  hover:scale-105"
+              className="h-10 object-cover cursor-pointer hover:scale-105"
             />
             <Image
               height={144}
@@ -132,10 +132,10 @@ const MiddleFooter = () => {
               loading="lazy"
               alt="footer img"
               src="/images/google-play.jpg"
-              className="h-10 mx-2 object-cover cursor-pointer  hover:scale-105"
+              className="h-10 mx-2 object-cover cursor-pointer hover:scale-105"
             />
           </div>
-          <div className=" w-[80%]">
+          <div className="w-[80%]">
             <p className="my-3">Secured Payment Gateways</p>
             <Image
               height={144}
@@ -144,7 +144,7 @@ const MiddleFooter = () => {
               priority={false}
               loading="lazy"
               src="/images/payment-method.png"
-              className="h-10  object-contain "
+              className="h-10 object-contain "
             />
           </div>
         </div>

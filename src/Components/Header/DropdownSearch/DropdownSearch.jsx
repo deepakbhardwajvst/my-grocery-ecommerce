@@ -72,7 +72,7 @@ const DropdownSearch = (props) => {
               <li
                 className={`ds-categories-list-item bg1 bg1hover text-[16px] w-full p-2.5 ${
                   selectedCategories === 0
-                    ? "ds-li-select bg-[#3a3a3a] text-gray-700  font-bold"
+                    ? "ds-li-select bg-[#3a3a3a] text-gray-700 font-bold"
                     : ""
                 } `}
                 onClick={() => dropdownHandlerClose(selectedCategoriesName, 0)}
@@ -85,7 +85,7 @@ const DropdownSearch = (props) => {
                     key={index}
                     className={`ds-categories-list-item hover:bg-[#3e4a5d] text-[16px] w-full p-2.5 ${
                       selectedCategories === index + 1
-                        ? "ds-li-select bg-[#414967]  font-bold"
+                        ? "ds-li-select bg-[#414967] font-bold"
                         : ""
                     } `}
                     onClick={() =>

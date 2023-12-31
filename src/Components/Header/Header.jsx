@@ -84,10 +84,10 @@ const Header = () => {
           />
           <SearchIcon className="color1 opacity-50 " />
         </div>
-        {/* Header Search  End Here   */}
+        {/* Header Search End Here  */}
         {/* Header Location Box */}
         <div className="h-location-box px-2 rounded-2xl bg1 flex justify-center items-center w-max cursor-pointer border1">
-          <div className=" h-9  flex justify-center items-center">
+          <div className=" h-9 flex justify-center items-center">
             <DropdownSearch
               data={countries}
               frontHeading={"Location"}

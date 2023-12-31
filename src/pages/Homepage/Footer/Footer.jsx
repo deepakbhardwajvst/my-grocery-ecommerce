@@ -35,11 +35,11 @@ const Footer = () => {
 
   const topFooter = () => {
     return (
-      <div className="flex justify-between  p-8 ">
+      <div className="flex justify-between py-8 ">
         {footerBoxData.map((box, index) => (
           <div
             key={index}
-            className="transition1 flex items-center buttonbg1 justify-center p-4 rounded-lg"
+            className="transition1 flex items-center cardbg1 justify-center p-4 rounded-lg"
           >
             <div className="">
               <Image
@@ -63,7 +63,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer w-full cardbg1 rounded-lg">
+    <footer className="footer w-full bg1 rounded-lg">
       <div className="borderb1">
         <div className="container ">
           {topFooter()}

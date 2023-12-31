@@ -1,10 +1,8 @@
 .h-search-box {
-  /* border: 3px solid rgb(0, 194, 194); */
-  /* box-shadow: 1px 2px 15px rgba(255, 255, 255, 0.542); */
   border-radius: 20px;
 }
 .h-category-box {
-  border-right: 1px solid #5f5f5f;
+  border-right: 1px solid #339bbe;
 }
 
 .ds-wrapper:hover .header {
@@ -13,26 +11,25 @@
 .accountbox-item {
   position: relative;
   display: flex;
-  border: 1px solid #5f5f5f;
+  border: 1px solid #339bbe;
   justify-content: center;
   align-items: flex-end;
-  background: #131a24;
+  background: #0b2447;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  /* border: 2px solid rgb(0, 194, 194); */
-  /* box-shadow: 1px 2px 15px rgba(255, 255, 255, 0.542); */
+
   cursor: pointer;
 }
 
 .accountbox-img {
   object-fit: cover;
   width: 1.25rem;
-  color: #b5b4b4;
+  color: #a5d7e8;
 }
 
 .accountbox-text {
   margin-left: 0.5rem;
-  color: #b5b4b4;
+  color: #a5d7e8;
   text-align: right;
 }
 .accountbox-span {
@@ -44,7 +41,7 @@
   background-color: rgb(3, 73, 97);
   border-radius: 50%;
   font-size: 0.75rem;
-  color: #b5b4b4;
+  color: #a5d7e8;
   display: flex;
   line-height: 1rem;
   align-items: center;

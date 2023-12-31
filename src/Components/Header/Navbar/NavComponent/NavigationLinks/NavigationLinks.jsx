@@ -95,7 +95,7 @@ const NavigationLinks = () => {
             <div className="">
               <div
                 ref={dropdownRef}
-                className="color1 hover:text-gray-300 whitespace-nowrap relative px-2"
+                className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2"
                 onClick={() => subDropdownHandler(index)}
               >
                 {item.label}

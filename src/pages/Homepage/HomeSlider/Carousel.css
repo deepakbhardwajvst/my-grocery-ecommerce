@@ -11,7 +11,7 @@
 }
 
 .Home-carousel-main .slick-arrow {
-  position: absolute;
+  /* position: absolute; */
   top: 47%;
   /* color: #000 !important; */
   width: 40px !important;

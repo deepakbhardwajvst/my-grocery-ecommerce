@@ -7,6 +7,7 @@ module.exports = {
       "rukminim2.flixcart.com",
       "rukminim1.flixcart.com",
       "wp.alithemes.com",
+      "www.jiomart.com",
     ],
   },
 };

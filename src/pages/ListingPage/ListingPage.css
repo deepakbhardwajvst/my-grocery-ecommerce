@@ -1,0 +1,37 @@
+.filterbar-heading::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+.filterbar-heading::before {
+  content: "";
+  width: 35%;
+  height: 3px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 10;
+}
+.filters ul::-webkit-scrollbar {
+  width: 7px !important;
+}
+.filters ul::-webkit-scrollbar-thumb {
+  background: #576cbc !important;
+}
+/* Add these styles to your CSS */
+.filterbox-checkbox {
+  background-color: #a5d7e8 !important;
+  /* Other styles for checkbox */
+}
+
+.filterbox-checkbox:checked {
+  background-color: #576cbc !important;
+}
+
+/* Optionally, you can add transition for a smooth effect */
+.filterbox-checkbox {
+  transition: background-color 0.3s ease;
+}

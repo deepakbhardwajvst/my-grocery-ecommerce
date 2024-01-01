@@ -54,6 +54,7 @@ const DropdownSearch = (props) => {
           ? selectedCategoriesName.substr(0, 14) + "..."
           : selectedCategoriesName}
       </div>
+
       {dropdown === true && (
         <div className="DropdownSearch absolute w-52 h-auto rounded-xl top-[100%] left-[-10px] bg1 shadow-md py-3 pr-2">
           <div className="ds-search-box">

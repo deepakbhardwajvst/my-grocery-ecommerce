@@ -54,7 +54,10 @@ img {
 .buttonbg1 {
   background: #576cbc;
 }
-.buttonhoverbg1 {
+.color2 {
+  color: #576cbc;
+}
+.buttonhoverbg1:hover {
   background: #024988;
 }
 .buttonbg2 {

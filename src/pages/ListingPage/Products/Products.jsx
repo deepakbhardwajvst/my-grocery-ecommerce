@@ -159,21 +159,7 @@ const Products = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-between my-4">
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <Card data={data} index={index} />
-          </div>
-        ))}
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <Card data={data} index={index} />
-          </div>
-        ))}
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <Card data={data} index={index} />
-          </div>
-        ))}
+        
         {data.map((data, index) => (
           <div key={data.id}>
             <Card data={data} index={index} />

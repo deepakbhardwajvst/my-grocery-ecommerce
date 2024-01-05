@@ -24,6 +24,21 @@ const Product = () => {
   const [productData, setProductData] = useState(true);
   const [isAdded, setIsadded] = useState(false);
   const [isAdded2, setIsadded2] = useState(false);
+  const [isAdded3, setIsadded3] = useState(false);
+  const [activeSize, setActiveSize] = useState(0);
+  const [count, setCount] = useState(0);
+  const increaseHandler = () => {
+    setCount(count + 1);
+  };
+  const decreaseHandler = () => {
+    if (count === 0) {
+      setCount(count);
+
+      alert("Become a vendor");
+    } else {
+      setCount(count - 1);
+    }
+  };
   const imgdata = [
     {
       img: "https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg",
@@ -63,7 +78,12 @@ const Product = () => {
   const addToCart2 = () => {
     setIsadded2(!isAdded2);
   };
-
+  const addToCart3 = () => {
+    setIsadded3(!isAdded3);
+  };
+  const isActive = (index) => {
+    setActiveSize(index);
+  };
   var settings = {
     dots: false,
     infinite: true,
@@ -167,20 +187,97 @@ const Product = () => {
               throwing in your favourite ingredients.)
             </p>
 
-            <div className="w-[100%] flex">
+            <div className="my-2 flex items-center ">
+              <span>Size / Weight:</span>
+              <ul className="flex mb-0 pl-4">
+                <li className="  cursor-pointer">
+                  <a
+                    className={`border1 p-1 rounded-sm ml-2  ${
+                      activeSize === 0 ? " bg-blue-500" : ""
+                    }`}
+                    onClick={() => isActive(0)}
+                  >
+                    70gm
+                  </a>
+                </li>
+                <li className="  cursor-pointer">
+                  <a
+                    className={`border1 p-1 rounded-sm ml-2  ${
+                      activeSize === 1 ? " bg-blue-500" : ""
+                    }`}
+                    onClick={() => isActive(1)}
+                  >
+                    140gm
+                  </a>
+                </li>
+                <li className="  cursor-pointer">
+                  <a
+                    className={`border1 p-1 rounded-sm ml-2  ${
+                      activeSize === 2 ? " bg-blue-500" : ""
+                    }`}
+                    onClick={() => isActive(2)}
+                  >
+                    280gm
+                  </a>
+                </li>
+                <li className="  cursor-pointer">
+                  <a
+                    className={`border1 p-1 rounded-sm ml-2  ${
+                      activeSize === 3 ? " bg-blue-500" : ""
+                    }`}
+                    onClick={() => isActive(3)}
+                  >
+                    420gm
+                  </a>
+                </li>
+                <li className="  cursor-pointer">
+                  <a
+                    className={`border1 p-1 rounded-sm ml-2  ${
+                      activeSize === 4 ? " bg-blue-500" : ""
+                    }`}
+                    onClick={() => isActive(4)}
+                  >
+                    560gm
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="w-[100%] flex my-3 gap2">
+              <div className="border1 px-1 flex w-[80px] justify-between">
+                <div className="p-quantity px-2 flex justify-center items-center  text-xl w-[80%]">
+                  {count}
+                </div>
+                <div className="p-plus-minus-box flex flex-col">
+                  <KeyboardArrowUpIcon
+                    onClick={increaseHandler}
+                    className="cursor-pointer"
+                  />
+                  <KeyboardArrowDownIcon
+                    onClick={decreaseHandler}
+                    className="cursor-pointer"
+                  />
+                </div>
+              </div>
               <Button
-                className="flex justify-center w-[30%] transition1  cardbg1 color1 py-3 px-2 buttonhoverbg1 my-3 "
+                className="flex justify-center w-[25%] transition1  cardbg1 color1 py-3 px-2 buttonhoverbg1  ml-3"
                 onClick={() => addToCart(productData)}
               >
                 <ShoppingCartOutlinedIcon className="color1" />
                 {isAdded === true ? "Added" : "Add to basket"}
               </Button>
               <Button
-                className="flex justify-center w-[30%] transition1  cardbg1 color1 py-3 px-2 buttonhoverbg1 my-3 ml-3"
+                className="flex justify-center w-[25%] transition1  cardbg1 color1 py-3 px-2 buttonhoverbg1  ml-3"
                 onClick={() => addToCart2(productData)}
               >
                 <ShoppingCartOutlinedIcon className="color1" />
                 {isAdded2 === true ? "Saved" : "Save for later"}
+              </Button>
+              <Button
+                className="flex justify-center w-[25%] transition1  cardbg1 color1 py-3 px-2 buttonhoverbg1  ml-3"
+                onClick={() => addToCart3(productData)}
+              >
+                <CompareArrowsIcon className="color1" />
+                {isAdded3 === true ? "Added" : "Compare"}
               </Button>
             </div>
             <p className=" text-xs">

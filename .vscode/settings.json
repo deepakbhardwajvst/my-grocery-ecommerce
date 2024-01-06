@@ -2,5 +2,6 @@
   "editor.formatOnSave": true,
   "diffEditor.codeLens": true,
   "editor.formatOnPaste": true,
-  "editor.formatOnType": true
+  "editor.formatOnType": true,
+  "files.autoSave": "onWindowChange"
 }

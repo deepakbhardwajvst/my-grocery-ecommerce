@@ -1,5 +1,6 @@
 "use client";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Rating from "@mui/material/Rating";
 import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
@@ -14,9 +15,9 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import "./Product.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import Image from "next/image";
+import ProductDetails from "./ProductDetails/ProductDetails";
 const Product = () => {
   const [zoomImage, setZoomImage] = useState(
     "https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg"
@@ -39,6 +40,7 @@ const Product = () => {
       setCount(count - 1);
     }
   };
+  const zoomSliderBig = useRef();
   const imgdata = [
     {
       img: "https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-1-202305292130.jpg",
@@ -84,7 +86,7 @@ const Product = () => {
   const isActive = (index) => {
     setActiveSize(index);
   };
-  var settings = {
+  const settings = {
     dots: false,
     infinite: true,
     speed: 500,
@@ -285,6 +287,7 @@ const Product = () => {
             </p>
           </div>
         </div>
+        <ProductDetails />
       </section>
     </>
   );

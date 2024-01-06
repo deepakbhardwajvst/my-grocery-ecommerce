@@ -89,6 +89,7 @@ img {
   background: linear-gradient(rgba(0, 0, 0, 0.251), rgba(0, 0, 0, 0.342));
   z-index: 1; /* Adjust the z-index to control the stacking order */
 }
+
 @media (max-width: 1400px) {
   .container {
     min-width: 1320px;

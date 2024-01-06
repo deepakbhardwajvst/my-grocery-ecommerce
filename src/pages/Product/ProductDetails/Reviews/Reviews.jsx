@@ -1,15 +1,42 @@
 import { Rating, Button } from "@mui/material";
-
+import { useState } from "react";
 function Reviews() {
-  const reviewData = [{ rating: 5 }, { rating: 4.7 }];
+  const reviewData = [
+    { rating: 5 },
+    { rating: 4.7 },
+    { rating: 5 },
+    { rating: 4.7 },
+    { rating: 5 },
+    { rating: 4.7 },
+  ];
+  const [reviews, setReviews] = useState([
+    ...Array(11).fill({ rating: 1 }),
+    ...Array(2).fill({ rating: 2 }),
+    ...Array(3).fill({ rating: 3 }),
+    ...Array(40).fill({ rating: 4 }),
+    ...Array(100).fill({ rating: 5 }),
+  ]);
+  // Calculate the count of each rating
+  const countByRating = reviews.reduce((acc, review) => {
+    const rating = review.rating;
+    acc[rating] = (acc[rating] || 0) + 1;
+    return acc;
+  }, {});
+
+  // Calculate the total number of reviews
+  const totalReviews = reviews.length;
+  // Calculate the total sum of ratings
+  const totalSum = reviews.reduce((sum, review) => sum + review.rating, 0);
+
+  // Calculate the average rating
+  const averageRating = totalSum / totalReviews;
 
   return (
     <div className="">
-      <div className="flex">
+      <div className="flex ">
         <div className="flex flex-col w-[50%]">
           <div className="">
-            <h3 className="inline mb-4">Customer questions & answers</h3>
-
+            <h3 className=" inline-block mb-4">Customer questions & answers</h3>
             <div className="flex flex-col justify-evenly ">
               {reviewData.map((item, index) => {
                 return (
@@ -99,19 +126,24 @@ function Reviews() {
             </div>
           </form>
         </div>
-        <div className="progressBarBox flex  w-[50%]">
-          <span className="mr-3">5 star</span>
-          <div
-            class="progress"
-            style={{ width: "85%", height: "20px" }}
-            className="w-[90%]  h-[20px]"
-          >
-            <div
-              class="progress-bar bg-success"
-              style={{ width: "75%", height: "20px" }}
-            >
-              75%
-            </div>
+        <div className="mt-10 ml-5 border1 h-max p-4 rounded-xl w-[50%] ">
+          <h2 className="text-xl font-bold mb-2">Reviews Progress Bar</h2>
+          <div className="my-3">
+            <p>Total Reviews: {totalReviews}</p>
+            <p>Average Rating: {averageRating.toFixed(2)} out of 5</p>
+          </div>
+          <div>
+            {[5, 4, 3, 2, 1].map((rating) => (
+              <div key={rating} className="flex items-center mb-1">
+                <span className="mr-2 text-lg">{rating} star:</span>
+                <progress
+                  value={countByRating[rating] || 0}
+                  max={totalReviews}
+                  className="bg-blue-500 h-4 w-[80%]"
+                ></progress>
+                <span className="ml-2">{countByRating[rating] || 0}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

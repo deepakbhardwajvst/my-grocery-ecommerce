@@ -1,26 +1,20 @@
-import { Rating } from "@mui/material";
+import { Rating, Button } from "@mui/material";
 
 function Reviews() {
-  const reviewData = [
-    { rating: 4 },
-    { rating: 5 },
-    { rating: 4.5 },
-    { rating: 4.6 },
-    { rating: 4.8 },
-    { rating: 4.7 },
-  ];
+  const reviewData = [{ rating: 5 }, { rating: 4.7 }];
+
   return (
     <div className="">
-      <div className="tabContent">
-        <div className="row">
-          <div className="col-md-8">
-            <h3>Customer questions & answers</h3>
-            <br />
-            <div className="flex flex-wrap justify-evenly">
+      <div className="flex">
+        <div className="flex flex-col w-[50%]">
+          <div className="">
+            <h3 className="inline mb-4">Customer questions & answers</h3>
+
+            <div className="flex flex-col justify-evenly ">
               {reviewData.map((item, index) => {
                 return (
                   <div
-                    className="p-4 border1 flex mb-[25px] w-[45%] rounded-2xl"
+                    className="p-4 border1 flex mb-[25px] w-[95%%] rounded-2xl"
                     key={index}
                   >
                     <div className="image w-[16%]">
@@ -60,130 +54,65 @@ function Reviews() {
               })}
             </div>
           </div>
-          {/* <form className="reviewForm" onSubmit={submitReview}>
-              <h4>Add a review</h4> <br />
+
+          <form className="reviewForm">
+            <h4 className="mb-4 text-xl">Add a review</h4>
+            <div className="col-md-6">
               <div className="form-group">
-                <textarea
-                  className="form-control"
-                  placeholder="Write a Review"
-                  name="review"
-                  value={reviewFields.review}
-                  onChange={(e) => changeInput(e.target.name, e.target.value)}
-                ></textarea>
+                <Rating name="rating" value={5} precision={0.5} />
               </div>
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      value={reviewFields.userName}
-                      className="form-control"
-                      placeholder="Name"
-                      name="userName"
-                      onChange={(e) =>
-                        changeInput(e.target.name, e.target.value)
-                      }
-                    />
-                  </div>
-                </div>
-
-                <div className="col-md-6">
-                  <div className="form-group">
-                    <Rating
-                      name="rating"
-                      value={rating}
-                      precision={0.5}
-                      onChange={(e) =>
-                        changeInput(e.target.name, e.target.value)
-                      }
-                    />
-                  </div>
-                </div>
-              </div>
-              <br />
-              <div className="form-group">
-                <Button type="submit" className="btn-g btn-lg">
-                  Submit Review
-                </Button>
-              </div>
-            </form>
-          
-
-          <div className="col-md-4 pl-5 reviewBox">
-            <h4>Customer reviews</h4>
-
-            <div className="d-flex align-items-center mt-2">
-              <Rating
-                name="half-rating-read"
-                defaultValue={4.5}
-                precision={0.5}
-                readOnly
-              />
-              <strong className="ml-3">4.8 out of 5</strong>
             </div>
-
-            <br />
-
-            <div className="progressBarBox d-flex align-items-center">
-              <span className="mr-3">5 star</span>
-              <div class="progress" style={{ width: "85%", height: "20px" }}>
-                <div
-                  class="progress-bar bg-success"
-                  style={{ width: "75%", height: "20px" }}
-                >
-                  75%
+            <div className="form-group my-4">
+              <textarea
+                className="bg1 py-3 px-4 w-[95%] h-[200px] rounded-xl border1"
+                placeholder="What did you like or dislike?"
+                name="review"
+              ></textarea>
+            </div>
+            <div className="row">
+              <div className="flex">
+                <div className="form-group">
+                  <input
+                    type="text"
+                    className="bg1 py-1 px-2 w-[340px] text-lg rounded-xl border1"
+                    placeholder="Your name"
+                    name="userName"
+                  />
+                </div>
+                <div className="form-group ml-2">
+                  <input
+                    type="Email"
+                    className="bg1 py-1 px-2 w-[340px] text-lg rounded-xl border1"
+                    placeholder="example@xyz.com"
+                    name="email"
+                  />
                 </div>
               </div>
             </div>
-
-            <div className="progressBarBox d-flex align-items-center">
-              <span className="mr-3">4 star</span>
-              <div class="progress" style={{ width: "85%", height: "20px" }}>
-                <div
-                  class="progress-bar bg-success"
-                  style={{ width: "50%", height: "20px" }}
-                >
-                  50%
-                </div>
-              </div>
+            <div className="form-group my-3 ">
+              <Button
+                type="submit"
+                className="buttonbg1 color1 buttonhoverbg1 px-8"
+              >
+                Submit Review
+              </Button>
             </div>
-
-            <div className="progressBarBox d-flex align-items-center">
-              <span className="mr-3">3 star</span>
-              <div class="progress" style={{ width: "85%", height: "20px" }}>
-                <div
-                  class="progress-bar bg-success"
-                  style={{ width: "55%", height: "20px" }}
-                >
-                  55%
-                </div>
-              </div>
+          </form>
+        </div>
+        <div className="progressBarBox flex  w-[50%]">
+          <span className="mr-3">5 star</span>
+          <div
+            class="progress"
+            style={{ width: "85%", height: "20px" }}
+            className="w-[90%]  h-[20px]"
+          >
+            <div
+              class="progress-bar bg-success"
+              style={{ width: "75%", height: "20px" }}
+            >
+              75%
             </div>
-
-            <div className="progressBarBox d-flex align-items-center">
-              <span className="mr-3">2 star</span>
-              <div class="progress" style={{ width: "85%", height: "20px" }}>
-                <div
-                  class="progress-bar bg-success"
-                  style={{ width: "35%", height: "20px" }}
-                >
-                  35%
-                </div>
-              </div>
-            </div>
-
-            <div className="progressBarBox d-flex align-items-center">
-              <span className="mr-3">1 star</span>
-              <div class="progress" style={{ width: "85%", height: "20px" }}>
-                <div
-                  class="progress-bar bg-success"
-                  style={{ width: "25%", height: "20px" }}
-                >
-                  25%
-                </div>
-              </div>
-            </div>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

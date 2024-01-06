@@ -6,7 +6,7 @@ import AdditionalInfo from "./AdditionalInfo/additionalInfo";
 import Reviews from "./Reviews/Reviews";
 
 const ProductDetails = () => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(2);
 
   return (
     <div className="border1 py-6 px-10 cardbg1 rounded-xl mt-10">

@@ -7,27 +7,29 @@ import Image from "next/image";
 const Footer = () => {
   const footerBoxData = [
     {
-      imgSrc: "./images/icon-1.svg",
+      imgSrc:
+        "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-1.svg",
       title: "Best prices & offers",
       description: "Orders $50 or more",
     },
     {
-      imgSrc: "./images/icon-2.svg",
+      imgSrc:
+        "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-2.svg",
       title: "Free delivery",
       description: "Orders $50 or more",
     },
     {
-      imgSrc: "./images/icon-3.svg",
+      imgSrc: "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-3.svg",
       title: "Great daily deal",
       description: "Orders $50 or more",
     },
     {
-      imgSrc: "./images/icon-4.svg",
+      imgSrc: "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-4.svg",
       title: "Wide assortment",
       description: "Orders $50 or more",
     },
     {
-      imgSrc: "./images/icon-5.svg",
+      imgSrc: "https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/icons/icon-5.svg",
       title: "Easy returns",
       description: "Orders $50 or more",
     },

@@ -1,4 +1,5 @@
 import { Rating, Button } from "@mui/material";
+import Image from "next/image";
 import { useState } from "react";
 function Reviews() {
   const reviewData = [
@@ -9,6 +10,7 @@ function Reviews() {
     { rating: 5 },
     { rating: 4.7 },
   ];
+  const [value, setValue] = useState(5);
   const [reviews, setReviews] = useState([
     ...Array(11).fill({ rating: 1 }),
     ...Array(2).fill({ rating: 2 }),
@@ -46,7 +48,10 @@ function Reviews() {
                   >
                     <div className="image w-[16%]">
                       <div className="rounded-[50%]">
-                        <img
+                        <Image
+                          width={144}
+                          height={144}
+                          loading="lazy"
                           src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/author-2.png"
                           className="w-[100px]"
                         />
@@ -86,13 +91,19 @@ function Reviews() {
             <h4 className="mb-4 text-xl">Add a review</h4>
             <div className="col-md-6">
               <div className="form-group">
-                <Rating name="rating" value={5} precision={0.5} />
+                <Rating
+                  name="simple-controlled"
+                  value={value}
+                  onChange={(event, newValue) => {
+                    setValue(newValue);
+                  }}
+                />
               </div>
             </div>
             <div className="form-group my-4">
               <textarea
                 className="bg1 py-3 px-4 w-[95%] h-[200px] rounded-xl border1"
-                placeholder="What did you like or dislike?"
+                placeholder="Share your thoughts here! We value your feedback. 😊"
                 name="review"
               ></textarea>
             </div>
@@ -102,16 +113,20 @@ function Reviews() {
                   <input
                     type="text"
                     className="bg1 py-1 px-2 w-[340px] text-lg rounded-xl border1"
-                    placeholder="Your name"
-                    name="userName"
+                    placeholder="Your Full Name"
+                    id="fullName"
+                    name="fullName"
+                    required
                   />
                 </div>
                 <div className="form-group ml-2">
                   <input
                     type="Email"
                     className="bg1 py-1 px-2 w-[340px] text-lg rounded-xl border1"
-                    placeholder="example@xyz.com"
+                    placeholder="Your Email Address"
                     name="email"
+                    id="email"
+                    required
                   />
                 </div>
               </div>

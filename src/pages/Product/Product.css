@@ -1,1 +1,17 @@
-
+.productpageslider .slick-arrow {
+    position: absolute;
+  top: 47%;
+  /* color: #000 !important; */
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  background: #19376d !important;
+  z-index: 9 !important;
+  transition: all 0.2s ease-in-out;
+}
+.productpageslider .slick-arrow.slick-next {
+  right: 1% !important;
+}
+.productpageslider .slick-arrow.slick-prev {
+  left: 1% !important;
+}

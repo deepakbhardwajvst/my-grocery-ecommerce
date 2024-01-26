@@ -6,13 +6,13 @@ import AdditionalInfo from "./AdditionalInfo/additionalInfo";
 import Reviews from "./Reviews/Reviews";
 
 const ProductDetails = () => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <div className="border1 py-6 px-10 cardbg1 rounded-xl mt-10">
       <ul className="flex color1 gap-4 my-6">
         <li
-          className="rounded-2xl border1"
+          className={`rounded-2xl border1 ${activeTab === 0 && "buttonbg2"}`}
           onClick={() => {
             setActiveTab(0);
           }}
@@ -20,15 +20,15 @@ const ProductDetails = () => {
           <Button className="color1">Description</Button>
         </li>
         <li
-          className="rounded-2xl border1"
+          className={`rounded-2xl border1 ${activeTab === 1 && "buttonbg2"}`}
           onClick={() => {
             setActiveTab(1);
           }}
         >
-          <Button className="color1">Additional Info</Button>
+          <Button className={`color1`}>Additional Info</Button>
         </li>
         <li
-          className="rounded-2xl border1"
+          className={`rounded-2xl border1 ${activeTab === 2 && "buttonbg2"}`}
           onClick={() => {
             setActiveTab(2);
           }}

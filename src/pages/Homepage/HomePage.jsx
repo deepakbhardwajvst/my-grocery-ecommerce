@@ -9,6 +9,8 @@ import DealsAlert from "./DealsAlert/DealsAlert";
 
 const HomePage = () => {
   return (
+    <>
+      
     <div className="container">
       <div className="mt-48">
         <Carousel />
@@ -19,7 +21,7 @@ const HomePage = () => {
         <TopProducts />
         <DealsAlert />
       </div>
-    </div>
+    </div></>
   );
 };
 

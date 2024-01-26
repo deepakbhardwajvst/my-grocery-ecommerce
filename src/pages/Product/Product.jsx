@@ -18,6 +18,7 @@ import "./Product.css";
 
 import Image from "next/image";
 import ProductDetails from "./ProductDetails/ProductDetails";
+import RelatedProducts from "./RelatedProducts/RelatedProducts";
 const Product = () => {
   const [zoomImage, setZoomImage] = useState(
     "https://www.jiomart.com/images/product/original/490000363/maggi-2-minute-masala-noodles-70-g-product-images-o490000363-p490000363-0-202305292130.jpg"
@@ -165,7 +166,7 @@ const Product = () => {
             <div className="flex items-center mt-3">
               <div className="flex items-center w-100">
                 <span className="price text-g font-weight-bold text-2xl mr-3">
-                  Price: ₹13
+                  Special Price: ₹13
                 </span>
                 <span className="oldPrice ml-auto">
                   ( MRP: <span className=" line-through">₹14 </span>)
@@ -288,6 +289,7 @@ const Product = () => {
           </div>
         </div>
         <ProductDetails />
+        <RelatedProducts />
       </section>
     </>
   );

@@ -56,7 +56,7 @@ const Header = () => {
         {/* Header image */}
         <div className="h-img-box w-1/6">
           <Image
-            src="./images/logo.svg"
+            src="https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
             alt="Logo"
             className="object-contain h-14"
             height={144}

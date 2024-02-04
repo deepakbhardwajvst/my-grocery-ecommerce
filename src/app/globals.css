@@ -10,6 +10,7 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: "Lato", sans-serif;
+  font-size:16px;
 }
 input {
   text-transform: capitalize;
@@ -20,8 +21,9 @@ Link {
   text-decoration: none;
 }
 img {
-  object-fit: cover;
+  object-fit: contain;
   width: 100%;
+  height:auto;
 }
 .b {
   background: #0b2447;
@@ -31,6 +33,7 @@ img {
 .w {
   background: rgb(31, 41, 55);
   color: #a5d7e8;
+  list-style:none;
 }
 .border1 {
   border: 1px solid #339bbe;

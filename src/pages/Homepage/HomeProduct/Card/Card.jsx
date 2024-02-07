@@ -20,7 +20,7 @@ const Card = (props) => {
           {props.data.tag}
         </span>
       )}
-      <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[495px] flex flex-col justify-between">
+      <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[auto] flex flex-col justify-between">
         <div className="hpcard-img-box relative">
           <div className="full-overlay">
             <Image
@@ -30,7 +30,7 @@ const Card = (props) => {
               priority={false}
               src="https://rukminim2.flixcart.com/image/612/612/kj8wccw0/vegetable/q/w/t/1-carrot-red-un-branded-no-whole-original-imafyv2n34udxasa.jpeg?q=70"
               alt="Product Image"
-              className="hpcard-img w-full h-72"
+              className="hpcard-img w-full h-full"
             />
           </div>
           <div className="hpcard-icons transition absolute top-0 left-0 w-full h-full p-7 flex items-center justify-center scale-75 z-20">

@@ -126,7 +126,7 @@ const DailyDeals = () => {
           <div className="w-[20%]">
             <Image
               src="/images/banner4.jpg"
-              className="w-[300px] h-[495px] rounded-3xl"
+              className="w-[300px] h-[auto] rounded-3xl"
               alt="Banner"
               height={144}
               width={144}

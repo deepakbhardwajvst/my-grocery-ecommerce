@@ -7,11 +7,12 @@ export default function Home() {
   const [productData, setProductData] = useState()
   useEffect(() => {
     getData('http://localhost:3000/productData')
-  })
+  }, [])
   const getData = async (url) => {
     try {
       await axios.get(url).then((res) => {
-        console.log(res.data)
+
+        setProductData(res.data)
       })
     } catch (error) {
       console.log(error.message)

@@ -7,6 +7,7 @@ const SubmenuDropdown = ({ submenuData }) => {
     <div className="absolute bg1 border rounded-md shadow-md mt-2 w-max z-10">
       {submenuData.map((item__, index__) => (
         <div key={index__} className="p-2 color1 hover:bg-[#a5d7e8] ">
+
           {item__.cat_name}
         </div>
       ))}

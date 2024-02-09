@@ -11,7 +11,7 @@ const navItems = [
   {
     label: "Home",
     hasSubmenu: true,
-    submenuData: [
+    items: [
       { cat_name: "Submenu1" },
       { cat_name: "Submenu2" },
       { cat_name: "Submenu3" },
@@ -21,7 +21,7 @@ const navItems = [
   {
     label: "Shop",
     hasSubmenu: true,
-    submenuData: [
+    items: [
       { cat_name: "Submenu4" },
       { cat_name: "Submenu5" },
       { cat_name: "Submenu6" },
@@ -32,7 +32,7 @@ const navItems = [
   {
     label: "Blog",
     hasSubmenu: true,
-    submenuData: [
+    items: [
       { cat_name: "Submenu13" },
       { cat_name: "Submenu14" },
       { cat_name: "Submenu15" },
@@ -61,8 +61,9 @@ const NavigationLinks = () => {
       console.log(error.message)
     }
   }
-  const subDropdownHandler = (index) => {
+  const subDropdownHandler = (identifier) => {
     const newSubDropdowns = [...subDropdowns];
+    const index = identifier;
     newSubDropdowns[index] = !newSubDropdowns[index];
     setSubDropdowns(newSubDropdowns);
   };
@@ -77,58 +78,51 @@ const NavigationLinks = () => {
     <div className="flex justify-center color1 items-center w-full pl-5">
       {navItems.map((item, index) => (
         <div
-          key={index}
-          className={`flex items-center cursor-pointer  transition duration-300 px-[6px] ${index === 0 ? "border-none" : "border-l border-gray-700"
+          key={`navItems-${index}`}
+          className={`flex items-center cursor-pointer transition duration-300 px-[6px] ${index === 0 ? "border-none" : "border-l border-gray-700"
             }`}
         >
           {typeof item === "object" && item.hasSubmenu ? (
             <div className="">
-              <div
+              <Button><div
                 ref={dropdownRef}
                 className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2"
                 onClick={() => subDropdownHandler(index)}
               >
                 {item.label}
-                <KeyboardArrowDownIcon />
-              </div>
+                <KeyboardArrowDownIcon className="color1 opacity-50 mb-1" />
+              </div></Button>
               {subDropdowns[index] && (
-                <SubmenuDropdown submenuData={item.submenuData} />
+                <SubmenuDropdown submenuData={item.items} />
               )}
             </div>
           ) : (
-            <div className="color1 hover:text-gray-300">{item}</div>
+            <Button> <div className="color1 hover:text-gray-300">{item}</div></Button>
           )}
         </div>
       ))}
 
       {navData.map((item, index) => (
-        <div className="as" key={index}>
-          <Button
-            ref={dropdownRef}
-            className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2"
-            onClick={() => subDropdownHandler(index)}
-          >
-            {item.cat_name}
-          </Button>
-          {item.items.length !== 0 && (
-            <ul className="">
-              {item.items.map((item_, index_) => (
-                <li className="" key={index_}>
-                  <Button>
-                    {subDropdowns[index] && Array.isArray(item_.items) && (
-                      <SubmenuDropdown submenuData={item_.items} />
-                    )}
-                  </Button>
-                </li>
-              ))}
-            </ul>
-          )}
+        <div key={`navData-${index}`} className={`flex items-center cursor-pointer transition duration-300 px-[6px] border-l border-gray-700
+          `}>
+          <div >
+            <Button
+              ref={dropdownRef}
+              className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2 "
+              onClick={() => subDropdownHandler(`navData-${index}`)}
+            >
+              {item.cat_name} <KeyboardArrowDownIcon className="color1 opacity-50 mb-1" />
+            </Button>
+            {subDropdowns[`navData-${index}`] && item.items && (
+              <SubmenuDropdown submenuData={item.items} />
+            )}
+          </div>
         </div>
       ))}
-
-
     </div>
   );
 };
+
+
 
 export default NavigationLinks;

@@ -6,6 +6,7 @@ import useOutsideClick from "@/CustomHook/useOutsideClick";
 import axios from "axios";
 import { Button } from '@mui/material';
 
+
 const navItems = [
 
   {
@@ -84,20 +85,26 @@ const NavigationLinks = () => {
         >
           {typeof item === "object" && item.hasSubmenu ? (
             <div className="">
-              <Button><div
-                ref={dropdownRef}
-                className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2"
-                onClick={() => subDropdownHandler(index)}
+              <Button
+                component="div"  // Set the component prop to "div"
               >
-                {item.label}
-                <KeyboardArrowDownIcon className="color1 opacity-50 mb-1" />
-              </div></Button>
+                <div
+                  ref={dropdownRef}
+                  className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2"
+                  onClick={() => subDropdownHandler(index)}
+                >
+                  {item.label}
+                  <KeyboardArrowDownIcon className="color1 opacity-50 mb-1" />
+                </div>
+              </Button>
               {subDropdowns[index] && (
-                <SubmenuDropdown submenuData={item.items} />
+                <SubmenuDropdown submenuData={item.items} item={null} />
               )}
             </div>
           ) : (
-            <Button> <div className="color1 hover:text-gray-300">{item}</div></Button>
+            <Button component="div"> {/* Set the component prop to "div" */}
+              <div className="color1 hover:text-gray-300">{item}</div>
+            </Button>
           )}
         </div>
       ))}
@@ -107,6 +114,7 @@ const NavigationLinks = () => {
           `}>
           <div >
             <Button
+              component="div"  // Set the component prop to "div"
               ref={dropdownRef}
               className="color1 hover:text-[#c8e0e8] hover:scale-110 whitespace-nowrap relative px-2 "
               onClick={() => subDropdownHandler(`navData-${index}`)}
@@ -114,7 +122,7 @@ const NavigationLinks = () => {
               {item.cat_name} <KeyboardArrowDownIcon className="color1 opacity-50 mb-1" />
             </Button>
             {subDropdowns[`navData-${index}`] && item.items && (
-              <SubmenuDropdown submenuData={item.items} />
+              <SubmenuDropdown submenuData={item.items} item={item} />
             )}
           </div>
         </div>
@@ -122,7 +130,5 @@ const NavigationLinks = () => {
     </div>
   );
 };
-
-
 
 export default NavigationLinks;

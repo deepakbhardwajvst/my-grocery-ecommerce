@@ -96,7 +96,7 @@ const Products = () => {
                 <span className="ml-2">{value2}</span>
               </Button>
               {isOpenDropDown2 !== false && (
-                <ul className="w-[200px] absolute">
+                <ul className="w-[200px] absolute z-30">
                   <li className="w-[200px]">
                     <Button
                       className="items-center cardbg1 border1  rounded-none color1 w-[200px]"

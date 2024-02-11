@@ -19,7 +19,7 @@ const Products = () => {
             for you!
           </h3>
           <div className="ml-auto flex items-center">
-            <div className="w-[200px] position-relative">
+            <div className="w-[270px] position-relative">
               <Button
                 className="btn_ border1 py-[10px] px-5 capitalize color1 rounded-xl text-base w-[100%] justify-start cardbg1"
                 onClick={() => setIsOpenDropDown(!isOpenDropDown)}
@@ -28,10 +28,10 @@ const Products = () => {
                 <span className="ml-2">{value}</span>
               </Button>
               {isOpenDropDown !== false && (
-                <ul className="w-[200px] absolute  z-30">
-                  <li className="w-[200px]">
+                <ul className="w-[270px] absolute  z-30">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue(5);
@@ -40,9 +40,9 @@ const Products = () => {
                       5
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue(10);
@@ -51,9 +51,9 @@ const Products = () => {
                       10
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue(15);
@@ -62,9 +62,9 @@ const Products = () => {
                       15
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue(20);
@@ -73,9 +73,9 @@ const Products = () => {
                       20
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue(25);
@@ -87,19 +87,19 @@ const Products = () => {
                 </ul>
               )}
             </div>
-            <div className="w-[200px] position-relative ml-4">
+            <div className="w-[270px] position-relative ml-4">
               <Button
-                className="btn_ border1 py-[10px] px-5 capitalize color1 rounded-xl text-base w-[100%] justify-start cardbg1 "
+                className="btn_ border1  py-[10px] px-5 capitalize  color1 rounded-xl text-base w-[100%] justify-start cardbg1 "
                 onClick={() => setIsOpenDropDown2(!isOpenDropDown2)}
               >
                 <FilterListOutlinedIcon className=" opacity-50 " /> Show :{" "}
                 <span className="ml-2">{value2}</span>
               </Button>
               {isOpenDropDown2 !== false && (
-                <ul className="w-[200px] absolute z-30">
-                  <li className="w-[200px]">
+                <ul className="w-[270px] absolute z-30">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500 rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown(false);
                         setValue2("Featured");
@@ -108,9 +108,9 @@ const Products = () => {
                       Featured
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown2(false);
                         setValue2("Price: Low to High");
@@ -119,9 +119,9 @@ const Products = () => {
                       Price: Low to High
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown2(false);
                         setValue2("Price: High to Low");
@@ -130,9 +130,9 @@ const Products = () => {
                       Price: High to Low
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown2(false);
                         setValue2("Release Date");
@@ -141,9 +141,9 @@ const Products = () => {
                       Release Date
                     </Button>
                   </li>
-                  <li className="w-[200px]">
+                  <li className="w-[270px]">
                     <Button
-                      className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
+                      className="items-center cardbg1 border1 hover:bg-blue-500  rounded-none color1 w-[270px]"
                       onClick={() => {
                         setIsOpenDropDown2(false);
                         setValue2("Avg. Rating");

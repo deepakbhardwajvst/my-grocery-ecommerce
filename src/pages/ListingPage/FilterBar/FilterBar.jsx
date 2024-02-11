@@ -80,7 +80,7 @@ const FilterBar = () => {
   ];
   return (
     <>
-      <div className="sidebar  sticky top-[110px]">
+      <div className="sidebar  sticky top-[160px]">
         <div className="card p-6 rounded-xl cardbg1 mb-10 shadow res-hide">
           <h3 className=" text-3xl font-semibold relative pb-5 mb-7 filterbar-heading before:bg-[#a5d7e8] after:bg-[#576cbc]">
             Category

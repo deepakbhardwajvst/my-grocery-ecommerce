@@ -21,14 +21,14 @@ const Products = () => {
           <div className="ml-auto flex items-center">
             <div className="w-[200px] position-relative">
               <Button
-                className="btn_ border1 py-[10px] px-5 capitalize color1 rounded-xl text-base w-[100%] justify-start cardbg1 "
+                className="btn_ border1 py-[10px] px-5 capitalize color1 rounded-xl text-base w-[100%] justify-start cardbg1"
                 onClick={() => setIsOpenDropDown(!isOpenDropDown)}
               >
                 <GridViewOutlinedIcon className=" opacity-50 " /> Show :{" "}
                 <span className="ml-2">{value}</span>
               </Button>
               {isOpenDropDown !== false && (
-                <ul className="w-[200px] absolute">
+                <ul className="w-[200px] absolute  z-30">
                   <li className="w-[200px]">
                     <Button
                       className="items-center cardbg1 border1  rounded-none color1 w-[200px]"
@@ -159,7 +159,7 @@ const Products = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-between my-4">
-        
+
         {data.map((data, index) => (
           <div key={data.id}>
             <Card data={data} index={index} />

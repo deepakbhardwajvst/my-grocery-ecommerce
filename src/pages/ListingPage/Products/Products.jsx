@@ -173,21 +173,22 @@ const Products = () => {
       </div>
       <div className="flex flex-wrap justify-start my-4">
 
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <div className="ml-[14px]">
-              <Card data={data} index={index} />
-            </div></div>
-        ))}
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <div className="ml-[14px]">
-              <Card data={data} index={index} />
-            </div></div>
-        ))}
+       
       </div>
     </div>
   );
 };
 
 export default Products;
+ {data.map((data, index) => (
+          <div key={data.id}>
+            <div className="ml-[14px]">
+              <Card data={data} index={index} />
+            </div></div>
+        ))}
+        {data.map((data, index) => (
+          <div key={data.id}>
+            <div className="ml-[14px]">
+              <Card data={data} index={index} />
+            </div></div>
+        ))}

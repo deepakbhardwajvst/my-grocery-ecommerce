@@ -9,6 +9,7 @@ import CompareArrowsOutlinedIcon from "@mui/icons-material/CompareArrowsOutlined
 import RemoveRedEyeOutlinedIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 
 import Image from "next/image";
+import Link  from 'next/link';
 
 const Card = (props) => {
   return (
@@ -83,9 +84,9 @@ const Card = (props) => {
               <CurrencyRupeeIcon className=" absolute top-1 left-[-1px] text-sm" />
               {props.data.price}
             </p>
-            <button className="buttonbg1 color1 px-4 py-2 rounded-full focus:outline-none">
+           <Link href="/listing/product"> <button className="buttonbg1 color1 px-4 py-2 rounded-full focus:outline-none">
               Add
-            </button>
+            </button></Link>
           </div>
         </div>
       </div>

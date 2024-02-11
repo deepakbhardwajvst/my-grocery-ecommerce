@@ -9,6 +9,7 @@ import axios from "axios";
 import AccountBox from "./AccountBox/AccountBox";
 import Navbar from "./Navbar/Navbar";
 import Image from "next/image";
+import Link  from 'next/link';
 
 const Header = () => {
   const categories = [
@@ -55,14 +56,14 @@ const Header = () => {
       <div className="container header flex items-center justify-between pt-3 w-full rounded-lg">
         {/* Header image */}
         <div className="h-img-box w-1/6">
-          <Image
+          <Link href="/"><Image
             src="https://wp.alithemes.com/html/nest/demo/assets/imgs/theme/logo.svg"
             alt="Logo"
             className="object-contain h-14"
             height={144}
             width={144}
             priority={true}
-          />
+          /></Link>
         </div>
 
         {/* Header image */}

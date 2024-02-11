@@ -114,7 +114,7 @@ const Products = () => {
                     <Button
                       className="items-center cardbg1 border1 hover:bg-blue-500 rounded-none color1 w-[270px]"
                       onClick={() => {
-                        setIsOpenDropDown(false);
+                        setIsOpenDropDown2(false);
                         setValue2("Featured");
                       }}
                     >

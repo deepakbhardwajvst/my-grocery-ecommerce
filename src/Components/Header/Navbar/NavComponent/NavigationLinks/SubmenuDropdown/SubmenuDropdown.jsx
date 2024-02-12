@@ -4,7 +4,7 @@ import Link from 'next/link';
 const SubmenuDropdown = ({ submenuData, item }) => {
 
   if (!Array.isArray(submenuData)) {
-    // Handle the case where submenuData is not an array (e.g., display an error message)
+    // Handle the case where submenuData is not an array
     return <div>Error: Submenu data is not an array</div>;
   }
   return (

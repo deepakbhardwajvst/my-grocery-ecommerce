@@ -4,7 +4,7 @@ import data from "@/Data/data";
 
 import Card from "./Card/Card";
 
-const HomeProduct = () => {
+const HomeProduct = (props) => {
   const [prodData, setprodData] = useState(props.data)
   const [catArray, setcatArray] = useState([])
   const [activeTab, setactiveTab] = useState();
@@ -98,14 +98,26 @@ const HomeProduct = () => {
           Popular Products
         </h2>
         <ul className="hp-head-items flex w-[40%] justify-between">
-          {categories.map((category, index) => (
-            <li
-              key={index}
-              className="hp-head-item hover:text-gray-200 cursor-pointer whitespace-nowrap hover:scale-[1.2]"
-            >
-              {category}
-            </li>
-          ))}
+          {
+            catArray.length !== 0 &&
+            catArray.map((cat, index) => {
+              return (
+                <li className="list list-inline-item">
+                  <a className={`cursor text-capitalize 
+                    ${activeTabIndex === index ? 'act' : ''}`}
+                    onClick={() => {
+                      setactiveTab(cat)
+                      setactiveTabIndex(index);
+                      productRow.current.scrollLeft = 0;
+                      setIsLoadingProducts(true);
+                    }}
+                  >
+                    {cat}
+                  </a>
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
       <div className="mx-4 my-8 flex flex-wrap justify-between">

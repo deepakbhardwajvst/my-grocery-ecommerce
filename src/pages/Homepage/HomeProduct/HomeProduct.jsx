@@ -27,11 +27,8 @@ const HomeProduct = () => {
     fade: false,
     arrows: context.windowWidth < 992 ? false : true,
   };
-
   const catArr = [];
-
   useEffect(() => {
-
     prodData.length !== 0 &&
       prodData.map((item) => {
         item.items.length !== 0 &&
@@ -39,15 +36,45 @@ const HomeProduct = () => {
             catArr.push(item_.cat_name);
           })
       })
-
     const list2 = catArr.filter((item, index) => catArr.indexOf(item) === index);
     setcatArray(list2)
-
     setactiveTab(list2[0])
-
     window.scrollTo(0, 0);
-
   }, [])
+  useEffect(() => {
+    var arr = [];
+    setActiveTabData(arr);
+    prodData.length !== 0 &&
+      prodData.map((item, index) => {
+        item.items.map((item_, index_) => {
+          if (item_.cat_name === activeTab) {
+            {
+              item_.products.length !== 0 &&
+                item_.products.map((product) => {
+                  arr.push({ ...product, parentCatName: item.cat_name, subCatName: item_.cat_name })
+                })
+
+              setActiveTabData(arr)
+              setTimeout(() => {
+                setIsLoadingProducts(false);
+              }, [1000]);
+            }
+          }
+        })
+
+      })
+
+  }, [activeTab, activeTabData])
+
+
+
+
+
+  const bestSellsArr = [];
+
+ 
+
+
 
 
   return (

@@ -72,7 +72,21 @@ const HomeProduct = () => {
 
   const bestSellsArr = [];
 
- 
+  useEffect(() => {
+    prodData.length !== 0 &&
+      prodData.map((item) => {
+        if (item.cat_name === "Electronics") {
+          item.items.length !== 0 &&
+            item.items.map((item_) => {
+              item_.products.length !== 0 &&
+                item_.products.map((product, index) => {
+                  bestSellsArr.push(product);
+                })
+            })
+        }
+      });
+    setBestSells(bestSellsArr);
+  }, [])
 
 
 

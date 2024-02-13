@@ -11,10 +11,7 @@ import { useState,useEffect } from "react";
 
 const HomePage = () => {
   const [homeData, setHomeData] = useState([]);
-  const [subDropdowns, setSubDropdowns] = useState(
-    Array(navItems.length).fill(false)
-  );
-  const dropdownRef = useRef(null);
+
   useEffect(() => {
     getData1('http://localhost:3000/productData')
   }, [])
@@ -35,7 +32,7 @@ const HomePage = () => {
         <Carousel />
         <FeaturedProduct />
         <Banners />
-        <HomeProduct homeData={homeData} />
+        <HomeProduct data={homeData} />
         <DailyDeals />
         <TopProducts />
         <DealsAlert />

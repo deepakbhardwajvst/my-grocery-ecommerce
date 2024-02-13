@@ -1,5 +1,5 @@
 "use client"
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import data from "@/Data/data";
 
 import Card from "./Card/Card";
@@ -18,15 +18,7 @@ const HomeProduct = (props) => {
     "Vegetables",
     "Fruits",
   ];
-  var settings = {
-    dots: false,
-    infinite: context.windowWidth < 992 ? false : true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    fade: false,
-    arrows: context.windowWidth < 992 ? false : true,
-  };
+ 
   const catArr = [];
   useEffect(() => {
     prodData.length !== 0 &&
@@ -85,7 +77,7 @@ const HomeProduct = (props) => {
             })
         }
       });
-    setBestSells(bestSellsArr);
+    
   }, [])
 
 

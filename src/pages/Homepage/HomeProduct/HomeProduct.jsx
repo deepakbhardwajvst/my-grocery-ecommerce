@@ -90,8 +90,8 @@ const HomeProduct = (props) => {
             catArray.map((cat, index) => {
               return (
                 <li className="list list-inline-item" key={index}>
-                  <Button><a className={` cursor-pointer capitalize b 
-                    ${activeTabIndex === index ? 'act' : ''}`}
+                  <Button className="b"><a className={` cursor-pointer capitalize  
+                    ${activeTabIndex === index ? ' text-yellow-300' : ''}`}
                     onClick={() => {
                       setactiveTab(cat)
                       setactiveTabIndex(index);

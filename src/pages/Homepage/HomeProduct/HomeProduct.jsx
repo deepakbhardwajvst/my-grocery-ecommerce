@@ -7,11 +7,11 @@ import Product from "./Product";
 const HomeProduct = (props) => {
   const [prodData, setprodData] = useState(props.dalsAndPulsesCategory || []);
   const [catArray, setcatArray] = useState([]);
-  const [activeTab, setactiveTab] = useState();
+  const [activeTab, setactiveTab] = useState("");
   const [activeTabIndex, setactiveTabIndex] = useState(0);
   const [activeTabData, setActiveTabData] = useState([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
-  console.log(props.dalsAndPulsesCategory)
+
   const categories = [
     "All",
     "Milks & Dairies",
@@ -34,28 +34,39 @@ const HomeProduct = (props) => {
     }
   }, [props.dalsAndPulsesCategory]);
 
+  
   useEffect(() => {
-    if (activeTabData.length === 0) {
-      return; // Avoid running on every render
-    }
-    var arr = [];
-    setActiveTabData(arr);
-    prodData.length !== 0 &&
-      prodData.map((item, index) => {
-        if (item.cat_name === activeTab) {
-          if (item.products && item.products.length !== 0) {
-            item.products.map((product) => {
-              arr.push({ ...product, parentCatName: item.cat_name, subCatName: item.cat_name });
-            });
-            setActiveTabData(arr);
-            setTimeout(() => {
-              // Placeholder for setIsLoadingProducts
-              setIsLoadingProducts(false);
-            }, 1000);
-          }
+    console.log("Entering useEffect");
+    console.log("Active Tab:", activeTab);
+    console.log("Active Tab Data:", activeTabData);
+    console.log("Prod Data:", prodData);
+
+    if (activeTabData.length === 0 && prodData.length !== 0) {
+      var arr = [];
+      props.dalsAndPulsesCategory.forEach((item, index) => {
+        console.log("Checking category:", item.cat_name);
+        if (item.cat_name === activeTab && item.products && item.products.length !== 0) {
+          console.log("Category matched:", item.cat_name);
+          item.products.forEach((product) => {
+            arr.push({ ...product, parentCatName: item.cat_name, subCatName: item.cat_name });
+          });
         }
-      })
-  }, [activeTab, activeTabData, prodData])  
+      });
+
+      console.log("Setting Active Tab Data:", arr);
+      setActiveTabData(arr);
+
+      setTimeout(() => {
+        setIsLoadingProducts(false);
+        console.log("Final array:", arr);
+      }, 1000);
+    } else {
+      console.log("No data to process");
+    }
+  }, [activeTab, activeTabData, prodData, props.dalsAndPulsesCategory]);
+
+
+
 
 
  
@@ -69,11 +80,9 @@ const HomeProduct = (props) => {
                 item.products.map((product, index) => {
                   bestSellsArr.push(product);
                 })
-          
         }
       });
   }, [])
-
 
 
 
@@ -106,13 +115,14 @@ const HomeProduct = (props) => {
           }
         </ul>
       </div>
-      <div className="mx-4 my-8 flex flex-wrap justify-between">
+      <div className="mx-4 my-8 flex flex-wrap justify-start">
         
         {
           activeTabData.length !== 0 &&
           activeTabData.map((item, index) => {
+            
             return (
-              <div className='item' key={index}>
+              <div className='item mr-3' key={index}>
 
                 <Product tag={item.type} item={item} />
               </div>

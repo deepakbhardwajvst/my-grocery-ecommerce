@@ -13,19 +13,29 @@ import axios from "axios";
 const HomePage = () => {
   const [homeData, setHomeData] = useState([]);
 
-  const getData1 = async (url) => {
-    try {
-      const response = await axios.get(url);
-      setHomeData(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
   useEffect(() => {
-    getData1('http://localhost:3000/productData');
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:3000/productData');
+      
+        setHomeData(response.data);
+      } catch (error) {
+        console.log("Error fetching data:", error.message);
+      }
+    };
+
+    fetchData();
   }, []);
+
+
+
+  // Render HomeProduct only if dalsAndPulsesCategory is available
   const dalsAndPulsesCategory = homeData && homeData[0] && homeData[0].items && homeData[0].items[0] && homeData[0].items;
+
+  if (!dalsAndPulsesCategory) {
+    return null; // or loading indicator
+  }
+
 
   return (
     <>  

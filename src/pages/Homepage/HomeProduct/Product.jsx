@@ -1,5 +1,5 @@
-import "../../HomePage.css";
-import "./Tooltip.css";
+import "../HomePage.css";
+import "./Card/Tooltip.css";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import CurrencyRupeeIcon from "@mui/icons-material/CurrencyRupee";
@@ -12,15 +12,11 @@ import Image from "next/image";
 import Link from 'next/link';
 
 const Product = (props) => {
+    console.log(props.item)
     return (
+        
         <div className="hpcard w-[300px] mb-4 relative ">
-            {props.data.tag !== null && props.data.tag !== undefined && (
-                <span
-                    className={`badge absolute top-0 left-0 text-gray-600 z-10 inline-block px-[25px] py-[10px] capitalize rounded-br-[100px] rounded-tl-[50px] ${props.data.tag}`}
-                >
-                    {props.data.tag}
-                </span>
-            )}
+           
             <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[auto] flex flex-col justify-between">
                 <div className="hpcard-img-box relative">
                     <div className="full-overlay">
@@ -29,7 +25,7 @@ const Product = (props) => {
                             width={144}
                             loading="lazy"
                             priority={false}
-                            src={false}
+                            src={props.item.catImg}
                             alt="Product Image"
                             className="hpcard-img w-full h-full"
                         />
@@ -55,15 +51,16 @@ const Product = (props) => {
                     </div>
                 </div>
                 <div className="p-4">
-                    <p className="text-sm text-gray-500">{props.data.category}</p>
+                    <p className="text-sm text-gray-500">{props.item.parentCatName
+}</p>
                     <h3 className="text-xl font-semibold color1 mb-2">
-                        {props.data.productName}
+                        {props.item.productName}
                     </h3>
                     <div className="flex items-center mb-2">
                         <div className="hpcard-rating">
                             <Rating
                                 name="half-rating-read"
-                                value={props.data.rating}
+                                value={props.item.rating}
                                 emptyIcon={
                                     <StarIcon style={{ opacity: 1 }} fontSize="inherit" />
                                 }
@@ -71,18 +68,18 @@ const Product = (props) => {
                                 readOnly
                             />
                         </div>
-                        <span className="textclr1 text-sm ml-2">({props.data.rating})</span>
+                        <span className="textclr1 text-sm ml-2">({props.item.rating})</span>
                     </div>
                     <p className="text-sm textclr1 mb-2">
                         By
                         <span className="font-bold text-[16px] text-gray-500 ml-1">
-                            {props.data.company}
+                            {props.item.brand}
                         </span>
                     </p>
                     <div className="flex justify-between items-center">
                         <p className="text-xl text-gray-300 font-bold relative pl-[10px]">
                             <CurrencyRupeeIcon className=" absolute top-1 left-[-1px] text-sm" />
-                            {props.data.price}
+                            {props.item.price}
                         </p>
                         <Link href="/listing/product"> <button className="buttonbg1 color1 px-4 py-2 rounded-full focus:outline-none">
                             Add

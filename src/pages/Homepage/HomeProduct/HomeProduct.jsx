@@ -1,7 +1,7 @@
 "use client"
 import { useState,useEffect } from "react";
 import { Button } from '@mui/material';
-
+import Slider from "react-slick";
 import Product from "./Product";
 
 const HomeProduct = (props) => {
@@ -12,14 +12,14 @@ const HomeProduct = (props) => {
   const [activeTabData, setActiveTabData] = useState([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
 
-  const categories = [
-    "All",
-    "Milks & Dairies",
-    "Coffes & Teas",
-    "Pet Foods",
-    "Vegetables",
-    "Fruits",
-  ];
+  var settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    className: "DD-slider",
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
   const handleCategoryClick = (cat) => {
     setactiveTab(cat);
   };
@@ -92,8 +92,8 @@ const HomeProduct = (props) => {
           }
         </ul>
       </div>
-      <div className="mx-4 my-8 flex flex-wrap justify-between">
-        
+      <div className="mx-4 my-8 flex">
+        <Slider {...settings} className="DD-slider flex w-[100%]">
         {
           activeTabData.length !== 0 &&
           activeTabData.map((item, index) => (
@@ -101,7 +101,7 @@ const HomeProduct = (props) => {
               <Product tag={item.type} item={item} />
             </div>
           ))
-        }
+          }</Slider>
       </div>
     </div>
   );

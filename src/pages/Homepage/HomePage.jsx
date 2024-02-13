@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import "./HomePage.css";
 import Carousel from "./HomeSlider/Carousel";
 import FeaturedProduct from "./FeaturedProduct/FeaturedProduct";
@@ -7,24 +7,25 @@ import HomeProduct from "./HomeProduct/HomeProduct";
 import DailyDeals from "./DailyDeals/DailyDeals";
 import TopProducts from "./TopProducts/TopProducts";
 import DealsAlert from "./DealsAlert/DealsAlert";
-import { useState,useEffect } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const HomePage = () => {
   const [homeData, setHomeData] = useState([]);
 
-  useEffect(() => {
-    getData1('http://localhost:3000/productData')
-  }, [])
   const getData1 = async (url) => {
     try {
-      await axios.get(url).then((res) => {
-
-        setHomeData(res.data)
-      })
+      const response = await axios.get(url);
+      setHomeData(response.data);
     } catch (error) {
-      console.log(error.message)
+      console.log(error.message);
     }
-  }
+  };
+
+  useEffect(() => {
+    getData1('http://localhost:3000/productData');
+  }, []);
+  const dalsAndPulsesCategory = homeData && homeData[0] && homeData[0].items && homeData[0].items[0] && homeData[0].items;
   return (
     <>  
     <div className="container">
@@ -32,7 +33,7 @@ const HomePage = () => {
         <Carousel />
         <FeaturedProduct />
         <Banners />
-        <HomeProduct data={homeData} />
+          <HomeProduct data={dalsAndPulsesCategory} />
         <DailyDeals />
         <TopProducts />
         <DealsAlert />

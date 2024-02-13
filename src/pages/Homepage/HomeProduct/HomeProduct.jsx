@@ -5,11 +5,15 @@ import data from "@/Data/data";
 import Card from "./Card/Card";
 
 const HomeProduct = (props) => {
-  const [prodData, setprodData] = useState(props.data)
-  const [catArray, setcatArray] = useState([])
+  const [prodData, setprodData] = useState(props.data || []);
+  const [catArray, setcatArray] = useState([]);
   const [activeTab, setactiveTab] = useState();
   const [activeTabIndex, setactiveTabIndex] = useState(0);
   const [activeTabData, setActiveTabData] = useState([]);
+
+  // Placeholder for setIsLoadingProducts
+  const [isLoadingProducts, setIsLoadingProducts] = useState(false);
+
   const categories = [
     "All",
     "Milks & Dairies",
@@ -18,7 +22,7 @@ const HomeProduct = (props) => {
     "Vegetables",
     "Fruits",
   ];
- 
+
   const catArr = [];
   useEffect(() => {
     prodData.length !== 0 &&
@@ -31,11 +35,17 @@ const HomeProduct = (props) => {
     const list2 = catArr.filter((item, index) => catArr.indexOf(item) === index);
     setcatArray(list2)
     setactiveTab(list2[0])
-    window.scrollTo(0, 0);
+
   }, [])
+
   useEffect(() => {
+    if (activeTabData.length === 0) {
+      return; // Avoid running on every render
+    }
+
     var arr = [];
     setActiveTabData(arr);
+
     prodData.length !== 0 &&
       prodData.map((item, index) => {
         item.items.map((item_, index_) => {
@@ -46,20 +56,16 @@ const HomeProduct = (props) => {
                   arr.push({ ...product, parentCatName: item.cat_name, subCatName: item_.cat_name })
                 })
 
-              setActiveTabData(arr)
+              setActiveTabData(arr);
               setTimeout(() => {
+                // Placeholder for setIsLoadingProducts
                 setIsLoadingProducts(false);
-              }, [1000]);
+              }, 1000);
             }
           }
         })
-
       })
-
-  }, [activeTab, activeTabData])
-
-
-
+  }, [activeTab, activeTabData, prodData])  // Add prodData as a dependency
 
 
   const bestSellsArr = [];
@@ -77,7 +83,6 @@ const HomeProduct = (props) => {
             })
         }
       });
-    
   }, [])
 
 

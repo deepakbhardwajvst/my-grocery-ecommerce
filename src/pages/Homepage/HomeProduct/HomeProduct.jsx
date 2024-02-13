@@ -3,17 +3,16 @@ import { useState,useEffect } from "react";
 import data from "@/Data/data";
 
 import Card from "./Card/Card";
+import { Button } from '@mui/material';
 
 const HomeProduct = (props) => {
-  const [prodData, setprodData] = useState(props.data || []);
+  const [prodData, setprodData] = useState(props.dalsAndPulsesCategory || []);
   const [catArray, setcatArray] = useState([]);
   const [activeTab, setactiveTab] = useState();
   const [activeTabIndex, setactiveTabIndex] = useState(0);
   const [activeTabData, setActiveTabData] = useState([]);
-
-  // Placeholder for setIsLoadingProducts
-  const [isLoadingProducts, setIsLoadingProducts] = useState(false);
-
+  const [isLoadingProducts, setIsLoadingProducts] = useState(true);
+  console.log(props.dalsAndPulsesCategory)
   const categories = [
     "All",
     "Milks & Dairies",
@@ -25,62 +24,53 @@ const HomeProduct = (props) => {
 
   const catArr = [];
   useEffect(() => {
-    prodData.length !== 0 &&
-      prodData.map((item) => {
-        item.items.length !== 0 &&
-          item.items.map((item_) => {
-            catArr.push(item_.cat_name);
-          })
-      })
-    const list2 = catArr.filter((item, index) => catArr.indexOf(item) === index);
-    setcatArray(list2)
-    setactiveTab(list2[0])
-
-  }, [])
+    if (props.dalsAndPulsesCategory && props.dalsAndPulsesCategory.length !== 0) {
+      const catArr = [];
+      props.dalsAndPulsesCategory.forEach((item) => {
+        catArr.push(item.cat_name);
+      });
+      const list2 = catArr.filter((item, index) => catArr.indexOf(item) === index);
+      setcatArray(list2);
+      setactiveTab(list2[0]);
+    }
+  }, [props.dalsAndPulsesCategory]);
 
   useEffect(() => {
     if (activeTabData.length === 0) {
       return; // Avoid running on every render
     }
-
     var arr = [];
     setActiveTabData(arr);
-
     prodData.length !== 0 &&
       prodData.map((item, index) => {
-        item.items.map((item_, index_) => {
-          if (item_.cat_name === activeTab) {
-            {
-              item_.products.length !== 0 &&
-                item_.products.map((product) => {
-                  arr.push({ ...product, parentCatName: item.cat_name, subCatName: item_.cat_name })
-                })
-
-              setActiveTabData(arr);
-              setTimeout(() => {
-                // Placeholder for setIsLoadingProducts
-                setIsLoadingProducts(false);
-              }, 1000);
-            }
+        if (item.cat_name === activeTab) {
+          if (item.products && item.products.length !== 0) {
+            item.products.map((product) => {
+              arr.push({ ...product, parentCatName: item.cat_name, subCatName: item.cat_name });
+            });
+            setActiveTabData(arr);
+            setTimeout(() => {
+              // Placeholder for setIsLoadingProducts
+              setIsLoadingProducts(false);
+            }, 1000);
           }
-        })
+        }
       })
-  }, [activeTab, activeTabData, prodData])  // Add prodData as a dependency
+  }, [activeTab, activeTabData, prodData])  
 
 
+ 
   const bestSellsArr = [];
 
   useEffect(() => {
     prodData.length !== 0 &&
       prodData.map((item) => {
         if (item.cat_name === "Electronics") {
-          item.items.length !== 0 &&
-            item.items.map((item_) => {
-              item_.products.length !== 0 &&
-                item_.products.map((product, index) => {
+              item.products.length !== 0 &&
+                item.products.map((product, index) => {
                   bestSellsArr.push(product);
                 })
-            })
+          
         }
       });
   }, [])
@@ -99,18 +89,18 @@ const HomeProduct = (props) => {
             catArray.length !== 0 &&
             catArray.map((cat, index) => {
               return (
-                <li className="list list-inline-item">
-                  <a className={`cursor text-capitalize 
+                <li className="list list-inline-item" key={index}>
+                  <Button><a className={` cursor-pointer capitalize b 
                     ${activeTabIndex === index ? 'act' : ''}`}
                     onClick={() => {
                       setactiveTab(cat)
                       setactiveTabIndex(index);
-                      productRow.current.scrollLeft = 0;
+                     
                       setIsLoadingProducts(true);
                     }}
                   >
                     {cat}
-                  </a>
+                  </a></Button>
                 </li>
               )
             })

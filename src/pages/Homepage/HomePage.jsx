@@ -26,6 +26,7 @@ const HomePage = () => {
     getData1('http://localhost:3000/productData');
   }, []);
   const dalsAndPulsesCategory = homeData && homeData[0] && homeData[0].items && homeData[0].items[0] && homeData[0].items;
+
   return (
     <>  
     <div className="container">
@@ -33,7 +34,7 @@ const HomePage = () => {
         <Carousel />
         <FeaturedProduct />
         <Banners />
-          <HomeProduct data={dalsAndPulsesCategory} />
+        <HomeProduct dalsAndPulsesCategory={dalsAndPulsesCategory} />
         <DailyDeals />
         <TopProducts />
         <DealsAlert />

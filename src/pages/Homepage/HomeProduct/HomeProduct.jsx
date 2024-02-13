@@ -1,9 +1,8 @@
 "use client"
 import { useState,useEffect } from "react";
-import data from "@/Data/data";
-
-import Card from "./Card/Card";
 import { Button } from '@mui/material';
+
+import Product from "./Product";
 
 const HomeProduct = (props) => {
   const [prodData, setprodData] = useState(props.dalsAndPulsesCategory || []);
@@ -108,11 +107,18 @@ const HomeProduct = (props) => {
         </ul>
       </div>
       <div className="mx-4 my-8 flex flex-wrap justify-between">
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <Card data={data} index={index} />
-          </div>
-        ))}
+        
+        {
+          activeTabData.length !== 0 &&
+          activeTabData.map((item, index) => {
+            return (
+              <div className='item' key={index}>
+
+                <Product tag={item.type} item={item} />
+              </div>
+            )
+          })
+        }
       </div>
     </div>
   );

@@ -12,7 +12,7 @@ import Image from "next/image";
 import Link from 'next/link';
 
 const Product = (props) => {
-    console.log(props.item)
+   
     return (
         
         <div className="hpcard w-[300px] mb-4 relative ">

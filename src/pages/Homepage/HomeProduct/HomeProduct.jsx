@@ -38,10 +38,7 @@ const HomeProduct = (props) => {
 
   
   useEffect(() => {
-    console.log("Entering useEffect");
-    console.log("Active Tab:", activeTab);
-    console.log("Active Tab Data:", activeTabData);
-    console.log("Prod Data:", prodData);
+
 
     if (prodData.length !== 0) {
       var arr = [];
@@ -61,10 +58,8 @@ const HomeProduct = (props) => {
         // Optionally, set loading state
         setIsLoadingProducts(false);
 
-        console.log("Setting Active Tab Data:", arr);
-      } else {
-        console.log("No data to process");
-      }
+       
+      } 
     }
   }, [activeTab, prodData]);
 

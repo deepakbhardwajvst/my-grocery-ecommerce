@@ -20,7 +20,9 @@ const HomeProduct = (props) => {
     "Vegetables",
     "Fruits",
   ];
-
+  const handleCategoryClick = (cat) => {
+    setactiveTab(cat);
+  };
   const catArr = [];
   useEffect(() => {
     if (props.dalsAndPulsesCategory && props.dalsAndPulsesCategory.length !== 0) {
@@ -41,50 +43,30 @@ const HomeProduct = (props) => {
     console.log("Active Tab Data:", activeTabData);
     console.log("Prod Data:", prodData);
 
-    if (activeTabData.length === 0 && prodData.length !== 0) {
+    if (prodData.length !== 0) {
       var arr = [];
-      props.dalsAndPulsesCategory.forEach((item, index) => {
-        console.log("Checking category:", item.cat_name);
-        if (item.cat_name === activeTab && item.products && item.products.length !== 0) {
-          console.log("Category matched:", item.cat_name);
-          item.products.forEach((product) => {
-            arr.push({ ...product, parentCatName: item.cat_name, subCatName: item.cat_name });
-          });
-        }
-      });
 
-      console.log("Setting Active Tab Data:", arr);
-      setActiveTabData(arr);
+      // Find the selected category in prodData
+      const selectedCategory = prodData.find((item) => item.cat_name === activeTab);
 
-      setTimeout(() => {
+      if (selectedCategory && selectedCategory.products && selectedCategory.products.length !== 0) {
+        // Process products for the selected category
+        selectedCategory.products.forEach((product) => {
+          arr.push({ ...product, parentCatName: selectedCategory.cat_name, subCatName: selectedCategory.cat_name });
+        });
+
+        // Set active tab data
+        setActiveTabData(arr);
+
+        // Optionally, set loading state
         setIsLoadingProducts(false);
-        console.log("Final array:", arr);
-      }, 1000);
-    } else {
-      console.log("No data to process");
+
+        console.log("Setting Active Tab Data:", arr);
+      } else {
+        console.log("No data to process");
+      }
     }
-  }, [activeTab, activeTabData, prodData, props.dalsAndPulsesCategory]);
-
-
-
-
-
- 
-  const bestSellsArr = [];
-
-  useEffect(() => {
-    prodData.length !== 0 &&
-      prodData.map((item) => {
-        if (item.cat_name === "Electronics") {
-              item.products.length !== 0 &&
-                item.products.map((product, index) => {
-                  bestSellsArr.push(product);
-                })
-        }
-      });
-  }, [])
-
-
+  }, [activeTab, prodData]);
 
   return (
     <div className="home-product mt-6">
@@ -103,7 +85,7 @@ const HomeProduct = (props) => {
                     onClick={() => {
                       setactiveTab(cat)
                       setactiveTabIndex(index);
-                     
+                      handleCategoryClick(cat)
                       setIsLoadingProducts(true);
                     }}
                   >
@@ -115,19 +97,15 @@ const HomeProduct = (props) => {
           }
         </ul>
       </div>
-      <div className="mx-4 my-8 flex flex-wrap justify-start">
+      <div className="mx-4 my-8 flex flex-wrap justify-between">
         
         {
           activeTabData.length !== 0 &&
-          activeTabData.map((item, index) => {
-            
-            return (
-              <div className='item mr-3' key={index}>
-
-                <Product tag={item.type} item={item} />
-              </div>
-            )
-          })
+          activeTabData.map((item, index) => (
+            <div className='item ' key={index}>
+              <Product tag={item.type} item={item} />
+            </div>
+          ))
         }
       </div>
     </div>

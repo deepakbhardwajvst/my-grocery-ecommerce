@@ -17,9 +17,9 @@ const Product = (props) => {
         
         <div className="hpcard w-[300px] mb-4 relative ">
            
-            <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md h-[auto] flex flex-col justify-between">
+            <div className="hpcard-box cardbg1 rounded-3xl overflow-hidden shadow-md min-h-[524px] max-h-[525px] flex flex-col justify-start">
                 <div className="hpcard-img-box relative">
-                    <div className="full-overlay">
+                    <div className="full-overlay bg-white p-4">
                         <Image
                             height={144}
                             width={144}
@@ -27,7 +27,7 @@ const Product = (props) => {
                             priority={false}
                             src={props.item.catImg}
                             alt="Product Image"
-                            className="hpcard-img w-full h-full"
+                            className="hpcard-img w-full max-h-[260px] object-cover"
                         />
                     </div>
                     <div className="hpcard-icons transition absolute top-0 left-0 w-full h-full p-7 flex items-center justify-center scale-75 z-20">
@@ -50,7 +50,7 @@ const Product = (props) => {
                         </ul>
                     </div>
                 </div>
-                <div className="p-4">
+                <div className="p-4 min-h-[230px] flex flex-col  justify-evenly">
                     <p className="text-sm text-gray-500">{props.item.parentCatName
 }</p>
                     <h3 className="text-xl font-semibold color1 mb-2">

@@ -3,7 +3,6 @@ import { useState,useEffect } from "react";
 import { Button } from '@mui/material';
 import Slider from "react-slick";
 import Product from "./Product";
-
 const HomeProduct = (props) => {
   const [prodData, setprodData] = useState(props.dalsAndPulsesCategory || []);
   const [catArray, setcatArray] = useState([]);
@@ -11,7 +10,6 @@ const HomeProduct = (props) => {
   const [activeTabIndex, setactiveTabIndex] = useState(0);
   const [activeTabData, setActiveTabData] = useState([]);
   const [isLoadingProducts, setIsLoadingProducts] = useState(true);
-
   var settings = {
     dots: false,
     infinite: true,
@@ -35,34 +33,20 @@ const HomeProduct = (props) => {
       setactiveTab(list2[0]);
     }
   }, [props.dalsAndPulsesCategory]);
-
-  
   useEffect(() => {
-
-
     if (prodData.length !== 0) {
       var arr = [];
-
-      // Find the selected category in prodData
+      // Finding the selected category in prodData
       const selectedCategory = prodData.find((item) => item.cat_name === activeTab);
-
       if (selectedCategory && selectedCategory.products && selectedCategory.products.length !== 0) {
-        // Process products for the selected category
+        // Processing products for the selected category
         selectedCategory.products.forEach((product) => {
           arr.push({ ...product, parentCatName: selectedCategory.cat_name, subCatName: selectedCategory.cat_name });
         });
-
-        // Set active tab data
         setActiveTabData(arr);
-
-        // Optionally, set loading state
         setIsLoadingProducts(false);
-
-       
-      } 
-    }
+      }}
   }, [activeTab, prodData]);
-
   return (
     <div className="home-product mt-6">
       <div className="hp-head-box flex justify-between items-center w-full">

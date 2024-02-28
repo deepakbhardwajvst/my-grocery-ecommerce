@@ -11,10 +11,14 @@ const SubmenuDropdown = ({ submenuData, item }) => {
     <div className="absolute bg1 border rounded-md shadow-md mt-2 w-max z-10">
       {submenuData.map((item__, index__) => (
         <div key={index__} className="p-2 color1 hover:bg-[#a5d7e8] ">
-
-          <Link href={`/${item.cat_name.toLowerCase()}/${item__.cat_name.toLowerCase()}`} className='color1'> <Button>{item__.cat_name}</Button></Link>
+  
+            <a className='color1'>
+              <Button>{item__.cat_name}</Button>
+            </a>
+          
         </div>
       ))}
+
     </div>
   );
 };

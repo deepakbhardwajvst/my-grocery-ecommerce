@@ -9,7 +9,7 @@ const Description = () => {
           Shop wide range of Noodle from the house of Maggi on Our Website.
           Satisfy your cravings with our versatile Noodles. Our noodles are
           carefully prepared to offer a wide range of culinary possibilities.
-          Whether you're creating savory soups, stir-fry dishes, or pasta
+          Whether you are creating savory soups, stir-fry dishes, or pasta
           recipes, our assortment offers a variety of noodle types and flavors
           to please your palate. Explore the world of noodles and enjoy the
           convenience and taste of our delicious options.

@@ -64,7 +64,7 @@ const HomeProduct = (props) => {
                     onClick={() => {
                       setactiveTab(cat)
                       setactiveTabIndex(index);
-                      handleCategoryClick(cat)
+                      handleCategoryClick(cat);
                       setIsLoadingProducts(true);
                     }}
                   >

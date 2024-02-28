@@ -52,8 +52,10 @@ function Reviews() {
                           width={144}
                           height={144}
                           loading="lazy"
+
                           src="https://wp.alithemes.com/html/nest/demo/assets/imgs/blog/author-2.png"
                           className="w-[100px]"
+                          alt="image"
                         />
                       </div>
                       <span className="text-g d-block text-center font-weight-bold"></span>

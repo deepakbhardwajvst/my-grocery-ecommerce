@@ -98,7 +98,7 @@ const FilterBar = () => {
                       height={144}
                       width={144}
                       className="h-10"
-                      Priority
+                      Priority alt="image"
                     />
                   </span>
                   <h4 className="mb-1 mx-3 color1 text-xl text-capitalize">
@@ -195,7 +195,7 @@ const FilterBar = () => {
           </div>
         </div>
 
-        <img src="" className="w-100" />
+        <img src="" className="w-100" alt="image" />
       </div>
     </>
   );

@@ -5,6 +5,7 @@ import SubmenuDropdown from "./SubmenuDropdown/SubmenuDropdown";
 import useOutsideClick from "@/CustomHook/useOutsideClick";
 import axios from "axios";
 import { Button } from '@mui/material';
+import Link  from 'next/link';
 
 
 const navItems = [
@@ -103,7 +104,7 @@ const NavigationLinks = () => {
             </div>
           ) : (
             <Button component="div"> {/* Set the component prop to "div" */}
-              <div className="color1 hover:text-gray-300">{item}</div>
+              <div className="color1 hover:text-gray-300"><Link href="/listing">{item}</Link></div>
             </Button>
           )}
         </div>

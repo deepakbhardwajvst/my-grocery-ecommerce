@@ -136,7 +136,7 @@ const DailyDeals = () => {
           <div className="ml-4 flex  w-[80%]">
             <Slider {...settings} className="DD-slider flex w-[100%]">
               {bestSelling.map((item, index) => {
-                return <Card data={item} key={index} />;
+                return <Card data={item} key={index} tag={null} />;
               })}
             </Slider>
           </div>

@@ -6,11 +6,12 @@ const AdditionalInfo = () => {
         <div className="ml-10">
           <h3 className=" font-bold text-lg my-1 ">Ingredients:</h3>
           <p className="">
-            WHEAT FLOUR, PALM OIL, SALT, AND LESS THAN 2% OF SUGAR, HYDROLYZED
-            PEANUT PROTEIN, ONION POWDER, CORNSTARCH, WHEAT GLUTEN, SPICES,
-            POTASSIUM CHLORIDE, CORIANDER, CHILI POWDER, TURMERIC, GARLIC
-            POWDER, CUMIN, CITRIC ACID, SODIUM TRIPOLYPHOSPHATE, POTASSIUM
-            CARBONATE, SODIUM CARBONATE, CARAMEL COLOR
+            Wheat Flour, Palm Oil, Salt, and Less Than 2% of Sugar, Hydrolyzed
+            Peanut Protein, Onion Powder, Cornstarch, Wheat Gluten, Spices,
+            Potassium Chloride, Coriander, Chili Powder, Turmeric, Garlic
+            Powder, Cumin, Citric Acid, Sodium Tripolyphosphate, Potassium
+            Carbonate, Sodium Carbonate, Caramel Color
+
           </p>
           <h2 className=" font-bold text-lg my-1 ">Legal Disclaimer:</h2>
           <p className="">

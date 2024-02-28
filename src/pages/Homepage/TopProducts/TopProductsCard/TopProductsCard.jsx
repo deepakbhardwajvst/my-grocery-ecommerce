@@ -16,7 +16,7 @@ const TopProductsCard = (props) => {
                 className="ts-items  hover:translate-y-[-10px] flex items-center transition1 my-3 mr-3 cursor-pointer buttonbg2 rounded-lg"
                 key={index}
               >
-                <div className="ts-img-box   w-[30%]  rounded-lg">
+                <div className="ts-img-box w-[30%] rounded-lg">
                   <Image
                     height={144}
                     width={144}
@@ -43,7 +43,7 @@ const TopProductsCard = (props) => {
                     <span className="ts-price text-g font-bold text-lg mr-5">
                       {item.currentPrice}
                       <CurrencyRupeeIcon className=" text-base " />
-                    </span>{" "}
+                    </span>
                     <span className="ts-normal-price text-lg opacity-60  line-through relative">
                       {item.normalPrice}
                       <span className="text-base">₹</span>

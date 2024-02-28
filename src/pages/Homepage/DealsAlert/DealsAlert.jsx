@@ -16,7 +16,7 @@ const DealsAlert = () => {
               </h2>
 
               <p className="text-[25px] font-medium text-[#545454] mb-4">
-                Start You'r Daily Shopping with name
+                Start Your Daily Shopping with name
               </p>
               <EmailAlert1 id={"Deals alert"} name={"Deals alert"} />
             </div>

@@ -13,12 +13,14 @@ const Products = () => {
   const [value2, setValue2] = useState("Featured");
   const dropdownRef = useRef(null);
   const dropdownHandler = () => {
-    setIsOpenDropDown(!isOpenDropDown)
+    setIsOpenDropDown(!isOpenDropDown);
   };
   const dropdownHandler2 = () => {
-    setIsOpenDropDown2(!isOpenDropDown2)
+    setIsOpenDropDown2(!isOpenDropDown2);
   };
-  const closeDropdown = () => { return (setIsOpenDropDown2(false), setIsOpenDropDown(false)) }
+  const closeDropdown = () => {
+    return setIsOpenDropDown2(false), setIsOpenDropDown(false);
+  };
 
   // Useing the custom hook
   useOutsideClick(dropdownRef, closeDropdown);
@@ -172,23 +174,23 @@ const Products = () => {
         </div>
       </div>
       <div className="flex flex-wrap justify-start my-4">
-
-       
+        {data.map((data, index) => (
+          <div key={data.id}>
+            <div className="ml-[14px]">
+              <Card data={data} index={index} />
+            </div>
+          </div>
+        ))}
+        {data.map((data, index) => (
+          <div key={data.id}>
+            <div className="ml-[14px]">
+              <Card data={data} index={index} />
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default Products;
- {data.map((data, index) => (
-          <div key={data.id}>
-            <div className="ml-[14px]">
-              <Card data={data} index={index} />
-            </div></div>
-        ))}
-        {data.map((data, index) => (
-          <div key={data.id}>
-            <div className="ml-[14px]">
-              <Card data={data} index={index} />
-            </div></div>
-        ))}

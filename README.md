@@ -6,4 +6,4 @@ navbar-dropdown added with reusable components
             <Card data={data} index={index} />
           </div>
         ))}
-json-server --watch db.json --port:3000
+json-server --watch db.json --port:3000 for running product data
